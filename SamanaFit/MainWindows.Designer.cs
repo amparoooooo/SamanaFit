@@ -1,6 +1,6 @@
 ﻿namespace SamanaFit
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -634,7 +634,7 @@
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -645,7 +645,7 @@
             Controls.Add(panelDeAcciones);
             Controls.Add(panelHeader);
             Controls.Add(panelSidebar);
-            Name = "Form1";
+            Name = "MainForm";
             Text = "SamanaFit";
             panelSidebar.ResumeLayout(false);
             panelHeader.ResumeLayout(false);
