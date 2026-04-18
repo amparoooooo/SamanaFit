@@ -110,7 +110,7 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Image = Properties.Resources.chart_column;
+            btnReportes.Image = SamanaFit.Ui.Properties.Resources.chart_column;
             btnReportes.Location = new Point(0, 380);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(250, 50);
@@ -126,7 +126,7 @@
             btnRutinas.FlatStyle = FlatStyle.Flat;
             btnRutinas.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRutinas.ForeColor = Color.White;
-            btnRutinas.Image = Properties.Resources.list_checks;
+            btnRutinas.Image = SamanaFit.Ui.Properties.Resources.list_checks;
             btnRutinas.Location = new Point(0, 330);
             btnRutinas.Name = "btnRutinas";
             btnRutinas.Size = new Size(250, 50);
@@ -142,7 +142,7 @@
             btnEjercicios.FlatStyle = FlatStyle.Flat;
             btnEjercicios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnEjercicios.ForeColor = Color.White;
-            btnEjercicios.Image = Properties.Resources.dumbbell;
+            btnEjercicios.Image = SamanaFit.Ui.Properties.Resources.dumbbell;
             btnEjercicios.Location = new Point(0, 280);
             btnEjercicios.Name = "btnEjercicios";
             btnEjercicios.Size = new Size(250, 50);
@@ -158,7 +158,7 @@
             btnNiveles.FlatStyle = FlatStyle.Flat;
             btnNiveles.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnNiveles.ForeColor = Color.White;
-            btnNiveles.Image = Properties.Resources.trending_up;
+            btnNiveles.Image = SamanaFit.Ui.Properties.Resources.trending_up;
             btnNiveles.Location = new Point(0, 230);
             btnNiveles.Name = "btnNiveles";
             btnNiveles.Size = new Size(250, 50);
@@ -174,7 +174,7 @@
             btnObjetivos.FlatStyle = FlatStyle.Flat;
             btnObjetivos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnObjetivos.ForeColor = Color.White;
-            btnObjetivos.Image = Properties.Resources.target;
+            btnObjetivos.Image = SamanaFit.Ui.Properties.Resources.target;
             btnObjetivos.Location = new Point(0, 180);
             btnObjetivos.Name = "btnObjetivos";
             btnObjetivos.Size = new Size(250, 50);
@@ -190,7 +190,7 @@
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.Image = Properties.Resources.users;
+            btnUsuarios.Image = SamanaFit.Ui.Properties.Resources.users;
             btnUsuarios.Location = new Point(0, 130);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(250, 50);
@@ -206,7 +206,7 @@
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnInicio.ForeColor = Color.White;
-            btnInicio.Image = Properties.Resources.house;
+            btnInicio.Image = SamanaFit.Ui.Properties.Resources.house;
             btnInicio.Location = new Point(0, 80);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(250, 50);
@@ -220,7 +220,7 @@
             lblTitle.Dock = DockStyle.Top;
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Image = Properties.Resources.dumbbell;
+            lblTitle.Image = SamanaFit.Ui.Properties.Resources.dumbbell;
             lblTitle.ImageAlign = ContentAlignment.MiddleLeft;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
@@ -236,7 +236,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSalir.ForeColor = Color.White;
-            btnSalir.Image = Properties.Resources.log_out;
+            btnSalir.Image = SamanaFit.Ui.Properties.Resources.log_out;
             btnSalir.Location = new Point(0, 677);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(250, 50);
@@ -276,7 +276,7 @@
             btnNotificaciones.FlatStyle = FlatStyle.Flat;
             btnNotificaciones.Font = new Font("Segoe UI", 14F);
             btnNotificaciones.ForeColor = Color.FromArgb(64, 64, 64);
-            btnNotificaciones.Image = Properties.Resources.bell;
+            btnNotificaciones.Image = SamanaFit.Ui.Properties.Resources.bell;
             btnNotificaciones.Location = new Point(607, 0);
             btnNotificaciones.Name = "btnNotificaciones";
             btnNotificaciones.Size = new Size(70, 124);
@@ -289,7 +289,7 @@
             btnAdministrador.FlatStyle = FlatStyle.Flat;
             btnAdministrador.Font = new Font("Segoe UI", 12F);
             btnAdministrador.ForeColor = Color.FromArgb(64, 64, 64);
-            btnAdministrador.Image = Properties.Resources.circle_user;
+            btnAdministrador.Image = SamanaFit.Ui.Properties.Resources.circle_user;
             btnAdministrador.ImageAlign = ContentAlignment.MiddleLeft;
             btnAdministrador.Location = new Point(677, 0);
             btnAdministrador.Name = "btnAdministrador";
@@ -473,7 +473,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.users;
+            pictureBox1.Image = SamanaFit.Ui.Properties.Resources.users;
             pictureBox1.Location = new Point(73, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(34, 26);
@@ -517,7 +517,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.list_checks;
+            pictureBox2.Image = SamanaFit.Ui.Properties.Resources.list_checks;
             pictureBox2.Location = new Point(78, 21);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(37, 26);
@@ -618,7 +618,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.target;
+            pictureBox3.Image = SamanaFit.Ui.Properties.Resources.target;
             pictureBox3.Location = new Point(72, 20);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(38, 27);
@@ -627,7 +627,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.dumbbell;
+            pictureBox4.Image = SamanaFit.Ui.Properties.Resources.dumbbell;
             pictureBox4.Location = new Point(81, 18);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(33, 29);

@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="SamanaFit/SamanaFit.csproj" />
+  <Project Path="SamanaFit.Data/SamanaFit.Data.csproj" />
+  <Project Path="SamanaFit/SamanaFit.Ui.csproj" />
 </Solution>
