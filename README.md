@@ -5,6 +5,7 @@ SamanáFit Pro es un sistema inteligente generador de rutinas de entrenamiento p
 diseñado para usuarios que desean mejorar su condición física según su objetivo.
 
 
+```bash
 SamanaFitPro/
 │
 ├── SamanaFit.Data/              # Biblioteca de clases para acceso a datos
@@ -35,3 +36,4 @@ SamanaFitPro/
 │
 └── SamanaFit.Tests/             # Pruebas unitarias
     └── RutinaServiceTests.cs
+```
