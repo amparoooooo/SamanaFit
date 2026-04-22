@@ -8,7 +8,7 @@ diseñado para usuarios que desean mejorar su condición física según su objet
 ```bash
 SamanaFitPro/
 │
-├── SamanaFit.Data/              # Biblioteca de clases para acceso a datos
+├── SamanaFit.Data/               (Class Library)
 │   ├── Entities/
 │   │   ├── Usuario.cs
 │   │   ├── Objetivo.cs
@@ -18,7 +18,7 @@ SamanaFitPro/
 │   │
 │   └── SamanaFitContext.cs
 │
-├── SamanaFit.UI/                # Proyecto WinForms
+├── SamanaFit.UI/                 (WinForms Project)
 │   ├── Services/
 │   │   ├── IRutinaService.cs
 │   │   └── RutinaService.cs
@@ -34,6 +34,6 @@ SamanaFitPro/
 │   │
 │   └── Program.cs
 │
-└── SamanaFit.Tests/             # Pruebas unitarias
+└── SamanaFit.Tests/              (xUnit Project)
     └── RutinaServiceTests.cs
 ```
