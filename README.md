@@ -37,3 +37,6 @@ SamanaFitPro/
 └── SamanaFit.Tests/              (xUnit Project)
     └── RutinaServiceTests.cs
 ```
+https://www.figma.com/make/qS8DXGGb2z23CWPJrwlQYo/Design-fitness-dashboard-UI?fullscreen=1&t=2Aguwr6XSe4fDHMt-1
+
+<img width="1634" height="826" alt="image" src="https://github.com/user-attachments/assets/ccbedea9-e0cf-4279-8035-474f65ab6ecc" />
