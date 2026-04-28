@@ -62,13 +62,13 @@
             lblNumRutinas = new Label();
             lblRutinasGeneradas = new Label();
             cardObjetivos = new Panel();
+            pictureBox3 = new PictureBox();
             lblNumObjetivos = new Label();
             lblObjetivosActivos = new Label();
             cardEjercicios = new Panel();
+            pictureBox4 = new PictureBox();
             lblNumEjercicios = new Label();
             lblEjerciciosDisp = new Label();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             panelSidebar.SuspendLayout();
             panelHeader.SuspendLayout();
             panelDeAcciones.SuspendLayout();
@@ -80,8 +80,8 @@
             cardRutinas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             cardObjetivos.SuspendLayout();
-            cardEjercicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            cardEjercicios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
@@ -110,7 +110,7 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Image = SamanaFit.Ui.Properties.Resources.chart_column;
+            btnReportes.Image = Ui.Properties.Resources.chart_column;
             btnReportes.Location = new Point(0, 380);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(250, 50);
@@ -118,6 +118,7 @@
             btnReportes.Text = "  Reportes";
             btnReportes.TextAlign = ContentAlignment.MiddleLeft;
             btnReportes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnRutinas
             // 
@@ -126,7 +127,7 @@
             btnRutinas.FlatStyle = FlatStyle.Flat;
             btnRutinas.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRutinas.ForeColor = Color.White;
-            btnRutinas.Image = SamanaFit.Ui.Properties.Resources.list_checks;
+            btnRutinas.Image = Ui.Properties.Resources.list_checks;
             btnRutinas.Location = new Point(0, 330);
             btnRutinas.Name = "btnRutinas";
             btnRutinas.Size = new Size(250, 50);
@@ -134,6 +135,7 @@
             btnRutinas.Text = "  Rutinas";
             btnRutinas.TextAlign = ContentAlignment.MiddleLeft;
             btnRutinas.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRutinas.Click += btnRutinas_Click;
             // 
             // btnEjercicios
             // 
@@ -142,7 +144,7 @@
             btnEjercicios.FlatStyle = FlatStyle.Flat;
             btnEjercicios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnEjercicios.ForeColor = Color.White;
-            btnEjercicios.Image = SamanaFit.Ui.Properties.Resources.dumbbell;
+            btnEjercicios.Image = Ui.Properties.Resources.dumbbell;
             btnEjercicios.Location = new Point(0, 280);
             btnEjercicios.Name = "btnEjercicios";
             btnEjercicios.Size = new Size(250, 50);
@@ -150,6 +152,7 @@
             btnEjercicios.Text = "  Ejercicios";
             btnEjercicios.TextAlign = ContentAlignment.MiddleLeft;
             btnEjercicios.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEjercicios.Click += btnEjercicios_Click;
             // 
             // btnNiveles
             // 
@@ -158,7 +161,7 @@
             btnNiveles.FlatStyle = FlatStyle.Flat;
             btnNiveles.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnNiveles.ForeColor = Color.White;
-            btnNiveles.Image = SamanaFit.Ui.Properties.Resources.trending_up;
+            btnNiveles.Image = Ui.Properties.Resources.trending_up;
             btnNiveles.Location = new Point(0, 230);
             btnNiveles.Name = "btnNiveles";
             btnNiveles.Size = new Size(250, 50);
@@ -166,6 +169,7 @@
             btnNiveles.Text = "  Niveles";
             btnNiveles.TextAlign = ContentAlignment.MiddleLeft;
             btnNiveles.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNiveles.Click += btnNiveles_Click;
             // 
             // btnObjetivos
             // 
@@ -174,7 +178,7 @@
             btnObjetivos.FlatStyle = FlatStyle.Flat;
             btnObjetivos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnObjetivos.ForeColor = Color.White;
-            btnObjetivos.Image = SamanaFit.Ui.Properties.Resources.target;
+            btnObjetivos.Image = Ui.Properties.Resources.target;
             btnObjetivos.Location = new Point(0, 180);
             btnObjetivos.Name = "btnObjetivos";
             btnObjetivos.Size = new Size(250, 50);
@@ -182,6 +186,7 @@
             btnObjetivos.Text = "  Objetivos";
             btnObjetivos.TextAlign = ContentAlignment.MiddleLeft;
             btnObjetivos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnObjetivos.Click += btnObjetivos_Click;
             // 
             // btnUsuarios
             // 
@@ -190,7 +195,7 @@
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.Image = SamanaFit.Ui.Properties.Resources.users;
+            btnUsuarios.Image = Ui.Properties.Resources.users;
             btnUsuarios.Location = new Point(0, 130);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(250, 50);
@@ -198,6 +203,7 @@
             btnUsuarios.Text = "  Usuarios";
             btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
             btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // btnInicio
             // 
@@ -206,7 +212,7 @@
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnInicio.ForeColor = Color.White;
-            btnInicio.Image = SamanaFit.Ui.Properties.Resources.house;
+            btnInicio.Image = Ui.Properties.Resources.house;
             btnInicio.Location = new Point(0, 80);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(250, 50);
@@ -220,7 +226,7 @@
             lblTitle.Dock = DockStyle.Top;
             lblTitle.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Image = SamanaFit.Ui.Properties.Resources.dumbbell;
+            lblTitle.Image = Ui.Properties.Resources.dumbbell;
             lblTitle.ImageAlign = ContentAlignment.MiddleLeft;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
@@ -236,7 +242,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSalir.ForeColor = Color.White;
-            btnSalir.Image = SamanaFit.Ui.Properties.Resources.log_out;
+            btnSalir.Image = Ui.Properties.Resources.log_out;
             btnSalir.Location = new Point(0, 677);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(250, 50);
@@ -244,6 +250,7 @@
             btnSalir.Text = "  Salir";
             btnSalir.TextAlign = ContentAlignment.MiddleLeft;
             btnSalir.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSalir.Click += btnSalir_Click;
             // 
             // panelHeader
             // 
@@ -276,7 +283,7 @@
             btnNotificaciones.FlatStyle = FlatStyle.Flat;
             btnNotificaciones.Font = new Font("Segoe UI", 14F);
             btnNotificaciones.ForeColor = Color.FromArgb(64, 64, 64);
-            btnNotificaciones.Image = SamanaFit.Ui.Properties.Resources.bell;
+            btnNotificaciones.Image = Ui.Properties.Resources.bell;
             btnNotificaciones.Location = new Point(607, 0);
             btnNotificaciones.Name = "btnNotificaciones";
             btnNotificaciones.Size = new Size(70, 124);
@@ -289,7 +296,7 @@
             btnAdministrador.FlatStyle = FlatStyle.Flat;
             btnAdministrador.Font = new Font("Segoe UI", 12F);
             btnAdministrador.ForeColor = Color.FromArgb(64, 64, 64);
-            btnAdministrador.Image = SamanaFit.Ui.Properties.Resources.circle_user;
+            btnAdministrador.Image = Ui.Properties.Resources.circle_user;
             btnAdministrador.ImageAlign = ContentAlignment.MiddleLeft;
             btnAdministrador.Location = new Point(677, 0);
             btnAdministrador.Name = "btnAdministrador";
@@ -353,6 +360,7 @@
             btnCrearRutina.TabIndex = 1;
             btnCrearRutina.Text = "Crear Rutina";
             btnCrearRutina.UseVisualStyleBackColor = false;
+            btnCrearRutina.Click += btnCrearRutina_Click;
             // 
             // btnRegistrarUsuario
             // 
@@ -369,6 +377,7 @@
             btnRegistrarUsuario.TabIndex = 2;
             btnRegistrarUsuario.Text = "Registrar Usuario";
             btnRegistrarUsuario.UseVisualStyleBackColor = false;
+            btnRegistrarUsuario.Click += btnRegistrarUsuario_Click;
             // 
             // btnVerEjercicios
             // 
@@ -385,6 +394,7 @@
             btnVerEjercicios.TabIndex = 3;
             btnVerEjercicios.Text = "Ver Ejercicios";
             btnVerEjercicios.UseVisualStyleBackColor = false;
+            btnVerEjercicios.Click += btnVerEjercicios_Click;
             // 
             // btnGenerarReporte
             // 
@@ -401,6 +411,7 @@
             btnGenerarReporte.TabIndex = 4;
             btnGenerarReporte.Text = "Generar Reporte";
             btnGenerarReporte.UseVisualStyleBackColor = false;
+            btnGenerarReporte.Click += btnGenerarReporte_Click;
             // 
             // panelDeBienvenida
             // 
@@ -473,7 +484,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = SamanaFit.Ui.Properties.Resources.users;
+            pictureBox1.Image = Ui.Properties.Resources.users;
             pictureBox1.Location = new Point(73, 21);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(34, 26);
@@ -517,7 +528,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = SamanaFit.Ui.Properties.Resources.list_checks;
+            pictureBox2.Image = Ui.Properties.Resources.list_checks;
             pictureBox2.Location = new Point(78, 21);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(37, 26);
@@ -559,6 +570,15 @@
             cardObjetivos.Size = new Size(192, 169);
             cardObjetivos.TabIndex = 2;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Ui.Properties.Resources.target;
+            pictureBox3.Location = new Point(72, 20);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(38, 27);
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            // 
             // lblNumObjetivos
             // 
             lblNumObjetivos.AutoSize = true;
@@ -594,6 +614,15 @@
             cardEjercicios.Size = new Size(193, 169);
             cardEjercicios.TabIndex = 3;
             // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Ui.Properties.Resources.dumbbell;
+            pictureBox4.Location = new Point(81, 18);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(33, 29);
+            pictureBox4.TabIndex = 2;
+            pictureBox4.TabStop = false;
+            // 
             // lblNumEjercicios
             // 
             lblNumEjercicios.AutoSize = true;
@@ -615,24 +644,6 @@
             lblEjerciciosDisp.Size = new Size(171, 23);
             lblEjerciciosDisp.TabIndex = 1;
             lblEjerciciosDisp.Text = "Ejercicios Disponibles";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = SamanaFit.Ui.Properties.Resources.target;
-            pictureBox3.Location = new Point(72, 20);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(38, 27);
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = SamanaFit.Ui.Properties.Resources.dumbbell;
-            pictureBox4.Location = new Point(81, 18);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(33, 29);
-            pictureBox4.TabIndex = 2;
-            pictureBox4.TabStop = false;
             // 
             // MainForm
             // 
@@ -663,9 +674,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             cardObjetivos.ResumeLayout(false);
             cardObjetivos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             cardEjercicios.ResumeLayout(false);
             cardEjercicios.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
         }

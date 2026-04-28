@@ -1,4 +1,4 @@
-namespace SamanaFit
+namespace SamanaFit.Ui
 {
     internal static class Program
     {

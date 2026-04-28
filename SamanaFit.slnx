@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="SamanaFit.Data/SamanaFit.Data.csproj" />
+  <Project Path="SamanaFit.Tests/SamanaFit.Tests.csproj" Id="9057022d-cb4f-40aa-bd33-4c300c5e10e6" />
   <Project Path="SamanaFit/SamanaFit.Ui.csproj" />
 </Solution>
