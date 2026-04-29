@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panelHeader = new Panel();
             lblHeaderTitle = new Label();
-            btnNotificaciones = new Button();
-            btnAdministrador = new Button();
+            btnInicio = new Button();
             panelForm = new Panel();
             btnLimpiar = new Button();
             btnEliminar = new Button();
@@ -75,8 +74,7 @@
             // 
             panelHeader.BackColor = Color.White;
             panelHeader.Controls.Add(lblHeaderTitle);
-            panelHeader.Controls.Add(btnNotificaciones);
-            panelHeader.Controls.Add(btnAdministrador);
+            panelHeader.Controls.Add(btnInicio);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
@@ -95,35 +93,20 @@
             lblHeaderTitle.Text = "Gestión de usuarios";
             lblHeaderTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnNotificaciones
+            // btnInicio
             // 
-            btnNotificaciones.Dock = DockStyle.Right;
-            btnNotificaciones.FlatAppearance.BorderSize = 0;
-            btnNotificaciones.FlatStyle = FlatStyle.Flat;
-            btnNotificaciones.Font = new Font("Segoe UI", 14F);
-            btnNotificaciones.ForeColor = Color.FromArgb(64, 64, 64);
-            btnNotificaciones.Image = Properties.Resources.bell;
-            btnNotificaciones.Location = new Point(950, 0);
-            btnNotificaciones.Name = "btnNotificaciones";
-            btnNotificaciones.Size = new Size(70, 124);
-            btnNotificaciones.TabIndex = 2;
-            btnNotificaciones.Click += btnNotificaciones_Click;
-            // 
-            // btnAdministrador
-            // 
-            btnAdministrador.Dock = DockStyle.Right;
-            btnAdministrador.FlatAppearance.BorderSize = 0;
-            btnAdministrador.FlatStyle = FlatStyle.Flat;
-            btnAdministrador.Font = new Font("Segoe UI", 12F);
-            btnAdministrador.ForeColor = Color.FromArgb(64, 64, 64);
-            btnAdministrador.Image = Properties.Resources.circle_user;
-            btnAdministrador.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdministrador.Location = new Point(1020, 0);
-            btnAdministrador.Name = "btnAdministrador";
-            btnAdministrador.Size = new Size(200, 124);
-            btnAdministrador.TabIndex = 1;
-            btnAdministrador.Text = " Administrador";
-            btnAdministrador.Click += btnAdministrador_Click;
+            btnInicio.Dock = DockStyle.Right;
+            btnInicio.FlatAppearance.BorderSize = 0;
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.Font = new Font("Segoe UI", 14F);
+            btnInicio.ForeColor = Color.FromArgb(64, 64, 64);
+            btnInicio.Image = Properties.Resources.house;
+            btnInicio.Location = new Point(1150, 0);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(70, 124);
+            btnInicio.TabIndex = 3;
+            btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.Click += btnInicio_Click;
             // 
             // panelForm
             // 
@@ -416,25 +399,25 @@
             dgvUsuarios.BorderStyle = BorderStyle.None;
             dgvUsuarios.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.FromArgb(227, 0, 82);
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle10.ForeColor = Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(227, 0, 82);
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
-            dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(227, 0, 82);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(227, 0, 82);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsuarios.ColumnHeadersHeight = 48;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { colId, colNombre, colApellido, colEdad, colSexo, colNivel, colObjetivo });
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.White;
-            dataGridViewCellStyle11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle11.ForeColor = Color.FromArgb(35, 56, 85);
-            dataGridViewCellStyle11.SelectionBackColor = Color.FromArgb(227, 242, 253);
-            dataGridViewCellStyle11.SelectionForeColor = Color.FromArgb(35, 56, 85);
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.False;
-            dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(35, 56, 85);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(227, 242, 253);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(35, 56, 85);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUsuarios.EnableHeadersVisualStyles = false;
             dgvUsuarios.GridColor = Color.FromArgb(224, 224, 224);
             dgvUsuarios.Location = new Point(12, 623);
@@ -443,8 +426,8 @@
             dgvUsuarios.ReadOnly = true;
             dgvUsuarios.RowHeadersVisible = false;
             dgvUsuarios.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.BackColor = Color.FromArgb(248, 249, 252);
-            dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(248, 249, 252);
+            dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.RowTemplate.Height = 44;
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.Size = new Size(1187, 173);
@@ -520,8 +503,7 @@
 
         private Panel panelHeader;
         private Label lblHeaderTitle;
-        private Button btnNotificaciones;
-        private Button btnAdministrador;
+        private Button btnInicio;
         private Panel panelForm;
         private DataGridView dgvUsuarios;
         private Label lblNombre;

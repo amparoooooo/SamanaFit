@@ -41,6 +41,11 @@ namespace SamanaFit.Ui.Forms
             LimpiarFormulario();
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (!ValidarFormulario(out var duracion, out var calorias))

@@ -73,6 +73,11 @@ namespace SamanaFit.Ui.Forms
             MessageBox.Show("Reporte de objetivos más comunes en construcción.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void CargarFiltrosPorDefecto()
         {
             cmbUsuario.Items.Clear();

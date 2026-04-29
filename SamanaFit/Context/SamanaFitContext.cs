@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using SamanaFit.Data.Models;
+using SamanaFit.Ui.Models;
 
-namespace SamanaFit.Data.Context;
+namespace SamanaFit.Ui.Context;
 
 public partial class SamanaFitContext : DbContext
 {
@@ -29,13 +29,10 @@ public partial class SamanaFitContext : DbContext
     public virtual DbSet<Sexo> Sexos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-   
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=SamanaFitPro;Trusted_Connection=True;TrustServerCertificate=True");
-
-    
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -51,8 +48,6 @@ public partial class SamanaFitContext : DbContext
         modelBuilder.Entity<Ejercicio>(entity =>
         {
             entity.HasKey(e => e.IdEjercicio).HasName("PK__Ejercici__F0E6D605D6316D58");
-
-            entity.Property(e => e.Descripcion).HasMaxLength(255);
 
             entity.HasOne(d => d.IdNivelNavigation).WithMany(p => p.Ejercicios).HasConstraintName("FK_Ejercicios_Nivel");
         });
@@ -71,13 +66,11 @@ public partial class SamanaFitContext : DbContext
         {
             entity.HasKey(e => e.IdRutina).HasName("PK__Rutinas__6E34CA3D3687D11B");
 
-            entity.Property(e => e.Observaciones).HasMaxLength(255);
-
-            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Rutinas).HasConstraintName("FK_Rutinas_Usuarios");
-
             entity.HasOne(d => d.IdNivelNavigation).WithMany(p => p.Rutinas).HasConstraintName("FK_Rutinas_Nivel");
 
             entity.HasOne(d => d.IdObjetivoNavigation).WithMany(p => p.Rutinas).HasConstraintName("FK_Rutinas_Objetivos");
+
+            entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Rutinas).HasConstraintName("FK_Rutinas_Usuarios");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
