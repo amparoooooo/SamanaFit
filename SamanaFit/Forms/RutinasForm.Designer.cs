@@ -34,6 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelHeader = new Panel();
             lblHeaderTitle = new Label();
+            btnInicio = new Button();
             panelFormulario = new Panel();
             btnGenerarRutina = new Button();
             btnLimpiar = new Button();
@@ -85,6 +86,7 @@
             // 
             panelHeader.BackColor = Color.White;
             panelHeader.Controls.Add(lblHeaderTitle);
+            panelHeader.Controls.Add(btnInicio);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
@@ -102,6 +104,21 @@
             lblHeaderTitle.TabIndex = 0;
             lblHeaderTitle.Text = "Gestión de rutinas";
             lblHeaderTitle.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnInicio
+            // 
+            btnInicio.Dock = DockStyle.Right;
+            btnInicio.FlatAppearance.BorderSize = 0;
+            btnInicio.FlatStyle = FlatStyle.Flat;
+            btnInicio.Font = new Font("Segoe UI", 14F);
+            btnInicio.ForeColor = Color.FromArgb(64, 64, 64);
+            btnInicio.Image = Properties.Resources.house;
+            btnInicio.Location = new Point(1129, 0);
+            btnInicio.Name = "btnInicio";
+            btnInicio.Size = new Size(70, 100);
+            btnInicio.TabIndex = 1;
+            btnInicio.UseVisualStyleBackColor = true;
+            btnInicio.Click += btnInicio_Click;
             // 
             // panelFormulario
             // 
@@ -628,6 +645,7 @@
 
         private Panel panelHeader;
         private Label lblHeaderTitle;
+        private Button btnInicio;
         private Panel panelFormulario;
         private Button btnGenerarRutina;
         private Button btnLimpiar;

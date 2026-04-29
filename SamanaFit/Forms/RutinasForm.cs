@@ -618,6 +618,11 @@ namespace SamanaFit.Ui.Forms
             LimpiarFormulario();
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         private void LimpiarFormulario()
         {
             txtDuracionSemanas.Text = string.Empty;

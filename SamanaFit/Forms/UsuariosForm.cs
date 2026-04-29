@@ -50,14 +50,10 @@ namespace SamanaFit.Ui.Forms
             LimpiarFormulario();
         }
 
-        private void btnNotificaciones_Click(object sender, EventArgs e)
+
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnAdministrador_Click(object sender, EventArgs e)
-        {
-
+            Close();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

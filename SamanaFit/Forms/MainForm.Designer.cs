@@ -28,6 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            menuStripMain = new MenuStrip();
+            menuArchivo = new ToolStripMenuItem();
+            menuSalir = new ToolStripMenuItem();
+            menuAccesos = new ToolStripMenuItem();
+            menuAccionesRapidas = new ToolStripMenuItem();
+            menuCrearRutina = new ToolStripMenuItem();
+            menuRegistrarUsuario = new ToolStripMenuItem();
+            menuVerEjercicios = new ToolStripMenuItem();
+            menuGenerarReporte = new ToolStripMenuItem();
+            menuUsuarios = new ToolStripMenuItem();
+            menuObjetivos = new ToolStripMenuItem();
+            menuNiveles = new ToolStripMenuItem();
+            menuEjercicios = new ToolStripMenuItem();
+            menuRutinas = new ToolStripMenuItem();
+            menuReportes = new ToolStripMenuItem();
+            toolStripAccesos = new ToolStrip();
+            toolUsuarios = new ToolStripButton();
+            toolObjetivos = new ToolStripButton();
+            toolNiveles = new ToolStripButton();
+            toolRutinas = new ToolStripButton();
+            toolEjercicios = new ToolStripButton();
+            toolReportes = new ToolStripButton();
             panelSidebar = new Panel();
             btnReportes = new Button();
             btnRutinas = new Button();
@@ -35,7 +57,6 @@
             btnNiveles = new Button();
             btnObjetivos = new Button();
             btnUsuarios = new Button();
-            btnInicio = new Button();
             lblTitle = new Label();
             btnSalir = new Button();
             panelHeader = new Panel();
@@ -69,6 +90,8 @@
             pictureBox4 = new PictureBox();
             lblNumEjercicios = new Label();
             lblEjerciciosDisp = new Label();
+            menuStripMain.SuspendLayout();
+            toolStripAccesos.SuspendLayout();
             panelSidebar.SuspendLayout();
             panelHeader.SuspendLayout();
             panelDeAcciones.SuspendLayout();
@@ -85,6 +108,184 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
+            // menuStripMain
+            // 
+            menuStripMain.ImageScalingSize = new Size(20, 20);
+            menuStripMain.Items.AddRange(new ToolStripItem[] { menuArchivo, menuAccesos, menuAccionesRapidas });
+            menuStripMain.Location = new Point(0, 0);
+            menuStripMain.Name = "menuStripMain";
+            menuStripMain.Size = new Size(1127, 28);
+            menuStripMain.TabIndex = 5;
+            menuStripMain.Text = "menuStripMain";
+            // 
+            // menuArchivo
+            // 
+            menuArchivo.DropDownItems.AddRange(new ToolStripItem[] { menuSalir });
+            menuArchivo.Name = "menuArchivo";
+            menuArchivo.Size = new Size(73, 24);
+            menuArchivo.Text = "Archivo";
+            // 
+            // menuSalir
+            // 
+            menuSalir.Name = "menuSalir";
+            menuSalir.Size = new Size(120, 26);
+            menuSalir.Text = "Salir";
+            menuSalir.Click += menuSalir_Click;
+            // 
+            // menuAccesos
+            // 
+            menuAccesos.DropDownItems.AddRange(new ToolStripItem[] { menuUsuarios, menuObjetivos, menuNiveles, menuEjercicios, menuRutinas, menuReportes });
+            menuAccesos.Name = "menuAccesos";
+            menuAccesos.Size = new Size(76, 24);
+            menuAccesos.Text = "Accesos";
+            // 
+            // menuUsuarios
+            // 
+            menuUsuarios.Name = "menuUsuarios";
+            menuUsuarios.Size = new Size(156, 26);
+            menuUsuarios.Text = "Usuarios";
+            menuUsuarios.Click += menuUsuarios_Click;
+            // 
+            // menuObjetivos
+            // 
+            menuObjetivos.Name = "menuObjetivos";
+            menuObjetivos.Size = new Size(156, 26);
+            menuObjetivos.Text = "Objetivos";
+            menuObjetivos.Click += menuObjetivos_Click;
+            // 
+            // menuNiveles
+            // 
+            menuNiveles.Name = "menuNiveles";
+            menuNiveles.Size = new Size(156, 26);
+            menuNiveles.Text = "Niveles";
+            menuNiveles.Click += menuNiveles_Click;
+            // 
+            // menuEjercicios
+            // 
+            menuEjercicios.Name = "menuEjercicios";
+            menuEjercicios.Size = new Size(156, 26);
+            menuEjercicios.Text = "Ejercicios";
+            menuEjercicios.Click += menuEjercicios_Click;
+            // 
+            // menuRutinas
+            // 
+            menuRutinas.Name = "menuRutinas";
+            menuRutinas.Size = new Size(156, 26);
+            menuRutinas.Text = "Rutinas";
+            menuRutinas.Click += menuRutinas_Click;
+            // 
+            // menuReportes
+            // 
+            menuReportes.Name = "menuReportes";
+            menuReportes.Size = new Size(156, 26);
+            menuReportes.Text = "Reportes";
+            menuReportes.Click += menuReportes_Click;
+            // 
+            // menuAccionesRapidas
+            // 
+            menuAccionesRapidas.DropDownItems.AddRange(new ToolStripItem[] { menuCrearRutina, menuRegistrarUsuario, menuVerEjercicios, menuGenerarReporte });
+            menuAccionesRapidas.Name = "menuAccionesRapidas";
+            menuAccionesRapidas.Size = new Size(133, 24);
+            menuAccionesRapidas.Text = "Acciones rápidas";
+            // 
+            // menuCrearRutina
+            // 
+            menuCrearRutina.Name = "menuCrearRutina";
+            menuCrearRutina.Size = new Size(224, 26);
+            menuCrearRutina.Text = "Crear Rutina";
+            menuCrearRutina.Click += btnCrearRutina_Click;
+            // 
+            // menuRegistrarUsuario
+            // 
+            menuRegistrarUsuario.Name = "menuRegistrarUsuario";
+            menuRegistrarUsuario.Size = new Size(224, 26);
+            menuRegistrarUsuario.Text = "Registrar Usuario";
+            menuRegistrarUsuario.Click += btnRegistrarUsuario_Click;
+            // 
+            // menuVerEjercicios
+            // 
+            menuVerEjercicios.Name = "menuVerEjercicios";
+            menuVerEjercicios.Size = new Size(224, 26);
+            menuVerEjercicios.Text = "Ver Ejercicios";
+            menuVerEjercicios.Click += btnVerEjercicios_Click;
+            // 
+            // menuGenerarReporte
+            // 
+            menuGenerarReporte.Name = "menuGenerarReporte";
+            menuGenerarReporte.Size = new Size(224, 26);
+            menuGenerarReporte.Text = "Generar Reporte";
+            menuGenerarReporte.Click += btnGenerarReporte_Click;
+            // 
+            // toolStripAccesos
+            // 
+            toolStripAccesos.ImageScalingSize = new Size(20, 20);
+            toolStripAccesos.Items.AddRange(new ToolStripItem[] { toolUsuarios, toolObjetivos, toolNiveles, toolRutinas, toolEjercicios, toolReportes });
+            toolStripAccesos.Location = new Point(0, 28);
+            toolStripAccesos.Name = "toolStripAccesos";
+            toolStripAccesos.Size = new Size(1127, 27);
+            toolStripAccesos.TabIndex = 6;
+            toolStripAccesos.Text = "toolStripAccesos";
+            // 
+            // toolUsuarios
+            // 
+            toolUsuarios.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolUsuarios.Image = Ui.Properties.Resources.users;
+            toolUsuarios.ImageTransparentColor = Color.Magenta;
+            toolUsuarios.Name = "toolUsuarios";
+            toolUsuarios.Size = new Size(76, 24);
+            toolUsuarios.Text = "Usuarios";
+            toolUsuarios.Click += menuUsuarios_Click;
+            // 
+            // toolObjetivos
+            // 
+            toolObjetivos.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolObjetivos.Image = Ui.Properties.Resources.target;
+            toolObjetivos.ImageTransparentColor = Color.Magenta;
+            toolObjetivos.Name = "toolObjetivos";
+            toolObjetivos.Size = new Size(29, 24);
+            toolObjetivos.Text = "Objetivos";
+            toolObjetivos.Click += menuObjetivos_Click;
+            // 
+            // toolNiveles
+            // 
+            toolNiveles.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolNiveles.Image = Ui.Properties.Resources.trending_up;
+            toolNiveles.ImageTransparentColor = Color.Magenta;
+            toolNiveles.Name = "toolNiveles";
+            toolNiveles.Size = new Size(29, 24);
+            toolNiveles.Text = "Niveles";
+            toolNiveles.Click += menuNiveles_Click;
+            // 
+            // toolRutinas
+            // 
+            toolRutinas.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolRutinas.Image = Ui.Properties.Resources.list_checks;
+            toolRutinas.ImageTransparentColor = Color.Magenta;
+            toolRutinas.Name = "toolRutinas";
+            toolRutinas.Size = new Size(64, 24);
+            toolRutinas.Text = "Rutinas";
+            toolRutinas.Click += menuRutinas_Click;
+            // 
+            // toolEjercicios
+            // 
+            toolEjercicios.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolEjercicios.Image = Ui.Properties.Resources.dumbbell;
+            toolEjercicios.ImageTransparentColor = Color.Magenta;
+            toolEjercicios.Name = "toolEjercicios";
+            toolEjercicios.Size = new Size(82, 24);
+            toolEjercicios.Text = "Ejercicios";
+            toolEjercicios.Click += menuEjercicios_Click;
+            // 
+            // toolReportes
+            // 
+            toolReportes.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            toolReportes.Image = Ui.Properties.Resources.chart_column;
+            toolReportes.ImageTransparentColor = Color.Magenta;
+            toolReportes.Name = "toolReportes";
+            toolReportes.Size = new Size(76, 24);
+            toolReportes.Text = "Reportes";
+            toolReportes.Click += menuReportes_Click;
+            // 
             // panelSidebar
             // 
             panelSidebar.BackColor = Color.FromArgb(227, 0, 82);
@@ -94,13 +295,12 @@
             panelSidebar.Controls.Add(btnNiveles);
             panelSidebar.Controls.Add(btnObjetivos);
             panelSidebar.Controls.Add(btnUsuarios);
-            panelSidebar.Controls.Add(btnInicio);
             panelSidebar.Controls.Add(lblTitle);
             panelSidebar.Controls.Add(btnSalir);
             panelSidebar.Dock = DockStyle.Left;
-            panelSidebar.Location = new Point(0, 0);
+            panelSidebar.Location = new Point(0, 55);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(250, 727);
+            panelSidebar.Size = new Size(250, 672);
             panelSidebar.TabIndex = 0;
             // 
             // btnReportes
@@ -205,22 +405,6 @@
             btnUsuarios.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUsuarios.Click += btnUsuarios_Click;
             // 
-            // btnInicio
-            // 
-            btnInicio.Dock = DockStyle.Top;
-            btnInicio.FlatAppearance.BorderSize = 0;
-            btnInicio.FlatStyle = FlatStyle.Flat;
-            btnInicio.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnInicio.ForeColor = Color.White;
-            btnInicio.Image = Ui.Properties.Resources.house;
-            btnInicio.Location = new Point(0, 80);
-            btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(250, 50);
-            btnInicio.TabIndex = 2;
-            btnInicio.Text = "  Inicio";
-            btnInicio.TextAlign = ContentAlignment.MiddleLeft;
-            btnInicio.TextImageRelation = TextImageRelation.ImageBeforeText;
-            // 
             // lblTitle
             // 
             lblTitle.Dock = DockStyle.Top;
@@ -259,7 +443,7 @@
             panelHeader.Controls.Add(btnNotificaciones);
             panelHeader.Controls.Add(btnAdministrador);
             panelHeader.Dock = DockStyle.Top;
-            panelHeader.Location = new Point(250, 0);
+            panelHeader.Location = new Point(250, 55);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(877, 124);
             panelHeader.TabIndex = 1;
@@ -288,6 +472,7 @@
             btnNotificaciones.Name = "btnNotificaciones";
             btnNotificaciones.Size = new Size(70, 124);
             btnNotificaciones.TabIndex = 2;
+            btnNotificaciones.Click += btnNotificaciones_Click;
             // 
             // btnAdministrador
             // 
@@ -303,6 +488,7 @@
             btnAdministrador.Size = new Size(200, 124);
             btnAdministrador.TabIndex = 1;
             btnAdministrador.Text = " Administrador";
+            btnAdministrador.Click += btnAdministrador_Click;
             // 
             // panelDeAcciones
             // 
@@ -656,8 +842,15 @@
             Controls.Add(panelDeAcciones);
             Controls.Add(panelHeader);
             Controls.Add(panelSidebar);
+            Controls.Add(toolStripAccesos);
+            Controls.Add(menuStripMain);
+            MainMenuStrip = menuStripMain;
             Name = "MainForm";
             Text = "SamanaFit";
+            menuStripMain.ResumeLayout(false);
+            menuStripMain.PerformLayout();
+            toolStripAccesos.ResumeLayout(false);
+            toolStripAccesos.PerformLayout();
             panelSidebar.ResumeLayout(false);
             panelHeader.ResumeLayout(false);
             panelDeAcciones.ResumeLayout(false);
@@ -684,6 +877,28 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSidebar;
+        private MenuStrip menuStripMain;
+        private ToolStripMenuItem menuArchivo;
+        private ToolStripMenuItem menuSalir;
+        private ToolStripMenuItem menuAccesos;
+        private ToolStripMenuItem menuAccionesRapidas;
+        private ToolStripMenuItem menuCrearRutina;
+        private ToolStripMenuItem menuRegistrarUsuario;
+        private ToolStripMenuItem menuVerEjercicios;
+        private ToolStripMenuItem menuGenerarReporte;
+        private ToolStripMenuItem menuUsuarios;
+        private ToolStripMenuItem menuObjetivos;
+        private ToolStripMenuItem menuNiveles;
+        private ToolStripMenuItem menuEjercicios;
+        private ToolStripMenuItem menuRutinas;
+        private ToolStripMenuItem menuReportes;
+        private ToolStrip toolStripAccesos;
+        private ToolStripButton toolUsuarios;
+        private ToolStripButton toolObjetivos;
+        private ToolStripButton toolNiveles;
+        private ToolStripButton toolRutinas;
+        private ToolStripButton toolEjercicios;
+        private ToolStripButton toolReportes;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Button btnRutinas;
@@ -691,7 +906,6 @@
         private System.Windows.Forms.Button btnNiveles;
         private System.Windows.Forms.Button btnObjetivos;
         private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeaderTitle;
