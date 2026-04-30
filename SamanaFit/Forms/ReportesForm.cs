@@ -23,10 +23,7 @@ namespace SamanaFit.Ui.Forms
             btnLimpiarFiltros.Click += btnLimpiarFiltros_Click;
             btnExportarPdf.Click += btnExportarPdf_Click;
             btnExportarExcel.Click += btnExportarExcel_Click;
-            btnReporteUsuarios.Click += btnReporteUsuarios_Click;
-            btnReporteRutinas.Click += btnReporteRutinas_Click;
-            btnReporteEjercicios.Click += btnReporteEjercicios_Click;
-            btnReporteObjetivos.Click += btnReporteObjetivos_Click;
+           
 
             CargarFiltrosPorDefecto();
             CargarResultados();

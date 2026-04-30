@@ -169,29 +169,35 @@ namespace SamanaFit.Ui.Forms
             }
 
             using var context = new SamanaFitContext();
-            var ejercicios = context.Ejercicios
-                .OrderBy(ej => ej.IdEjercicio)
-                .Take(3)
-                .ToList();
-
-            if (ejercicios.Count == 0)
-            {
-                MessageBox.Show("No hay ejercicios registrados para generar la rutina.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
             var existentes = context.DetalleRutinas
                 .Where(d => d.IdRutina == _idRutinaSeleccionada.Value)
                 .Select(d => d.IdEjercicio)
                 .ToHashSet();
 
+            const int minimoEjercicios = 5;
+            var ejercicios = context.Ejercicios
+                .OrderBy(ej => ej.IdEjercicio)
+                .Where(ej => !existentes.Contains(ej.IdEjercicio))
+                .Take(minimoEjercicios)
+                .ToList();
+
+            if (ejercicios.Count == 0)
+            {
+                MessageBox.Show("No hay ejercicios disponibles para generar la rutina.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (ejercicios.Count < minimoEjercicios)
+            {
+                MessageBox.Show(
+                    $"Solo hay {ejercicios.Count} ejercicios disponibles para agregar a esta rutina (mínimo deseado: {minimoEjercicios}).",
+                    "Aviso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+
             foreach (var ejercicio in ejercicios)
             {
-                if (existentes.Contains(ejercicio.IdEjercicio))
-                {
-                    continue;
-                }
-
                 context.DetalleRutinas.Add(new DetalleRutina
                 {
                     IdRutina = _idRutinaSeleccionada.Value,

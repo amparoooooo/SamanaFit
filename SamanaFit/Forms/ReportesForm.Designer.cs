@@ -36,11 +36,6 @@
             panelFiltros = new Panel();
             btnExportarExcel = new Button();
             btnExportarPdf = new Button();
-            btnReporteObjetivos = new Button();
-            btnReporteEjercicios = new Button();
-            btnReporteRutinas = new Button();
-            btnReporteUsuarios = new Button();
-            lblReportesRapidos = new Label();
             btnLimpiarFiltros = new Button();
             btnBuscar = new Button();
             txtFecha = new TextBox();
@@ -111,11 +106,6 @@
             panelFiltros.BackColor = Color.White;
             panelFiltros.Controls.Add(btnExportarExcel);
             panelFiltros.Controls.Add(btnExportarPdf);
-            panelFiltros.Controls.Add(btnReporteObjetivos);
-            panelFiltros.Controls.Add(btnReporteEjercicios);
-            panelFiltros.Controls.Add(btnReporteRutinas);
-            panelFiltros.Controls.Add(btnReporteUsuarios);
-            panelFiltros.Controls.Add(lblReportesRapidos);
             panelFiltros.Controls.Add(btnLimpiarFiltros);
             panelFiltros.Controls.Add(btnBuscar);
             panelFiltros.Controls.Add(txtFecha);
@@ -129,7 +119,7 @@
             panelFiltros.Controls.Add(lblFiltrosTitle);
             panelFiltros.Location = new Point(12, 140);
             panelFiltros.Name = "panelFiltros";
-            panelFiltros.Size = new Size(1404, 520);
+            panelFiltros.Size = new Size(1404, 413);
             panelFiltros.TabIndex = 6;
             // 
             // btnExportarExcel
@@ -139,7 +129,7 @@
             btnExportarExcel.FlatStyle = FlatStyle.Flat;
             btnExportarExcel.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnExportarExcel.ForeColor = Color.White;
-            btnExportarExcel.Location = new Point(300, 432);
+            btnExportarExcel.Location = new Point(300, 340);
             btnExportarExcel.Name = "btnExportarExcel";
             btnExportarExcel.Size = new Size(220, 52);
             btnExportarExcel.TabIndex = 17;
@@ -153,103 +143,12 @@
             btnExportarPdf.FlatStyle = FlatStyle.Flat;
             btnExportarPdf.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnExportarPdf.ForeColor = Color.White;
-            btnExportarPdf.Location = new Point(48, 432);
+            btnExportarPdf.Location = new Point(48, 340);
             btnExportarPdf.Name = "btnExportarPdf";
             btnExportarPdf.Size = new Size(220, 52);
             btnExportarPdf.TabIndex = 16;
             btnExportarPdf.Text = "📄  Exportar PDF";
             btnExportarPdf.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteObjetivos
-            // 
-            btnReporteObjetivos.BackColor = Color.White;
-            btnReporteObjetivos.FlatAppearance.BorderColor = Color.FromArgb(233, 236, 239);
-            btnReporteObjetivos.FlatAppearance.BorderSize = 1;
-            btnReporteObjetivos.FlatStyle = FlatStyle.Flat;
-            btnReporteObjetivos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnReporteObjetivos.ForeColor = Color.FromArgb(35, 56, 85);
-            btnReporteObjetivos.Image = Ui.Properties.Resources.target;
-            btnReporteObjetivos.ImageAlign = ContentAlignment.TopLeft;
-            btnReporteObjetivos.Location = new Point(1110, 275);
-            btnReporteObjetivos.Name = "btnReporteObjetivos";
-            btnReporteObjetivos.Padding = new Padding(12, 14, 12, 14);
-            btnReporteObjetivos.Size = new Size(250, 140);
-            btnReporteObjetivos.TabIndex = 15;
-            btnReporteObjetivos.Text = "Objetivos más\r\ncomunes";
-            btnReporteObjetivos.TextAlign = ContentAlignment.BottomLeft;
-            btnReporteObjetivos.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnReporteObjetivos.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteEjercicios
-            // 
-            btnReporteEjercicios.BackColor = Color.White;
-            btnReporteEjercicios.FlatAppearance.BorderColor = Color.FromArgb(233, 236, 239);
-            btnReporteEjercicios.FlatAppearance.BorderSize = 1;
-            btnReporteEjercicios.FlatStyle = FlatStyle.Flat;
-            btnReporteEjercicios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnReporteEjercicios.ForeColor = Color.FromArgb(35, 56, 85);
-            btnReporteEjercicios.Image = Ui.Properties.Resources.dumbbell;
-            btnReporteEjercicios.ImageAlign = ContentAlignment.TopLeft;
-            btnReporteEjercicios.Location = new Point(824, 275);
-            btnReporteEjercicios.Name = "btnReporteEjercicios";
-            btnReporteEjercicios.Padding = new Padding(12, 14, 12, 14);
-            btnReporteEjercicios.Size = new Size(250, 140);
-            btnReporteEjercicios.TabIndex = 14;
-            btnReporteEjercicios.Text = "Ejercicios más\r\nusados";
-            btnReporteEjercicios.TextAlign = ContentAlignment.BottomLeft;
-            btnReporteEjercicios.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnReporteEjercicios.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteRutinas
-            // 
-            btnReporteRutinas.BackColor = Color.White;
-            btnReporteRutinas.FlatAppearance.BorderColor = Color.FromArgb(233, 236, 239);
-            btnReporteRutinas.FlatAppearance.BorderSize = 1;
-            btnReporteRutinas.FlatStyle = FlatStyle.Flat;
-            btnReporteRutinas.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnReporteRutinas.ForeColor = Color.FromArgb(35, 56, 85);
-            btnReporteRutinas.Image = Ui.Properties.Resources.list_checks;
-            btnReporteRutinas.ImageAlign = ContentAlignment.TopLeft;
-            btnReporteRutinas.Location = new Point(538, 275);
-            btnReporteRutinas.Name = "btnReporteRutinas";
-            btnReporteRutinas.Padding = new Padding(12, 14, 12, 14);
-            btnReporteRutinas.Size = new Size(250, 140);
-            btnReporteRutinas.TabIndex = 13;
-            btnReporteRutinas.Text = "Rutinas\r\ngeneradas";
-            btnReporteRutinas.TextAlign = ContentAlignment.BottomLeft;
-            btnReporteRutinas.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnReporteRutinas.UseVisualStyleBackColor = false;
-            // 
-            // btnReporteUsuarios
-            // 
-            btnReporteUsuarios.BackColor = Color.White;
-            btnReporteUsuarios.FlatAppearance.BorderColor = Color.FromArgb(233, 236, 239);
-            btnReporteUsuarios.FlatAppearance.BorderSize = 1;
-            btnReporteUsuarios.FlatStyle = FlatStyle.Flat;
-            btnReporteUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnReporteUsuarios.ForeColor = Color.FromArgb(35, 56, 85);
-            btnReporteUsuarios.Image = Ui.Properties.Resources.users;
-            btnReporteUsuarios.ImageAlign = ContentAlignment.TopLeft;
-            btnReporteUsuarios.Location = new Point(252, 275);
-            btnReporteUsuarios.Name = "btnReporteUsuarios";
-            btnReporteUsuarios.Padding = new Padding(12, 14, 12, 14);
-            btnReporteUsuarios.Size = new Size(250, 140);
-            btnReporteUsuarios.TabIndex = 12;
-            btnReporteUsuarios.Text = "Usuarios\r\nregistrados";
-            btnReporteUsuarios.TextAlign = ContentAlignment.BottomLeft;
-            btnReporteUsuarios.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnReporteUsuarios.UseVisualStyleBackColor = false;
-            // 
-            // lblReportesRapidos
-            // 
-            lblReportesRapidos.AutoSize = true;
-            lblReportesRapidos.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblReportesRapidos.ForeColor = Color.FromArgb(17, 34, 64);
-            lblReportesRapidos.Location = new Point(48, 214);
-            lblReportesRapidos.Name = "lblReportesRapidos";
-            lblReportesRapidos.Size = new Size(209, 32);
-            lblReportesRapidos.TabIndex = 11;
-            lblReportesRapidos.Text = "Reportes rápidos";
             // 
             // btnLimpiarFiltros
             // 
@@ -383,9 +282,9 @@
             panelResultados.BackColor = Color.White;
             panelResultados.Controls.Add(dgvResultados);
             panelResultados.Controls.Add(lblResultadosTitle);
-            panelResultados.Location = new Point(12, 676);
+            panelResultados.Location = new Point(12, 590);
             panelResultados.Name = "panelResultados";
-            panelResultados.Size = new Size(1404, 540);
+            panelResultados.Size = new Size(1404, 626);
             panelResultados.TabIndex = 7;
             // 
             // dgvResultados
@@ -428,7 +327,7 @@
             dgvResultados.RowHeadersWidth = 51;
             dgvResultados.RowTemplate.Height = 52;
             dgvResultados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvResultados.Size = new Size(1344, 430);
+            dgvResultados.Size = new Size(1344, 516);
             dgvResultados.TabIndex = 1;
             // 
             // colId
@@ -513,11 +412,6 @@
         private Panel panelFiltros;
         private Button btnExportarExcel;
         private Button btnExportarPdf;
-        private Button btnReporteObjetivos;
-        private Button btnReporteEjercicios;
-        private Button btnReporteRutinas;
-        private Button btnReporteUsuarios;
-        private Label lblReportesRapidos;
         private Button btnLimpiarFiltros;
         private Button btnBuscar;
         private TextBox txtFecha;
