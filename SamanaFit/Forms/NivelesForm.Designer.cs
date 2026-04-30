@@ -50,6 +50,7 @@
             colDescripcion = new DataGridViewTextBoxColumn();
             lblRegistrosTitle = new Label();
             panelHeader.SuspendLayout();
+            panelRegistro.SuspendLayout();
             panelRegistros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNiveles).BeginInit();
             SuspendLayout();
@@ -62,7 +63,7 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1090, 124);
+            panelHeader.Size = new Size(1069, 124);
             panelHeader.TabIndex = 4;
             // 
             // lblHeaderTitle
@@ -85,7 +86,7 @@
             btnInicio.Font = new Font("Segoe UI", 14F);
             btnInicio.ForeColor = Color.FromArgb(64, 64, 64);
             btnInicio.Image = Properties.Resources.house;
-            btnInicio.Location = new Point(1020, 0);
+            btnInicio.Location = new Point(999, 0);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(70, 124);
             btnInicio.TabIndex = 1;
@@ -105,9 +106,9 @@
             panelRegistro.Controls.Add(cmbNombreNivel);
             panelRegistro.Controls.Add(lblNombreNivel);
             panelRegistro.Controls.Add(lblRegistroTitle);
-            panelRegistro.Location = new Point(12, 182);
+            panelRegistro.Location = new Point(12, 142);
             panelRegistro.Name = "panelRegistro";
-            panelRegistro.Size = new Size(1066, 416);
+            panelRegistro.Size = new Size(1045, 416);
             panelRegistro.TabIndex = 5;
             // 
             // btnLimpiar
@@ -179,7 +180,7 @@
             txtDescripcionNivel.Multiline = true;
             txtDescripcionNivel.Name = "txtDescripcionNivel";
             txtDescripcionNivel.PlaceholderText = "Ingrese una descripción detallada del nivel";
-            txtDescripcionNivel.Size = new Size(1030, 104);
+            txtDescripcionNivel.Size = new Size(1875, 104);
             txtDescripcionNivel.TabIndex = 4;
             // 
             // lblDescripcionNivel
@@ -202,9 +203,8 @@
             cmbNombreNivel.Items.AddRange(new object[] { "Seleccione un nivel", "Principiante", "Intermedio", "Avanzado" });
             cmbNombreNivel.Location = new Point(18, 120);
             cmbNombreNivel.Name = "cmbNombreNivel";
-            cmbNombreNivel.Size = new Size(1030, 36);
+            cmbNombreNivel.Size = new Size(1875, 36);
             cmbNombreNivel.TabIndex = 2;
-            cmbNombreNivel.SelectedIndex = 0;
             // 
             // lblNombreNivel
             // 
@@ -213,7 +213,7 @@
             lblNombreNivel.ForeColor = Color.FromArgb(17, 34, 64);
             lblNombreNivel.Location = new Point(18, 89);
             lblNombreNivel.Name = "lblNombreNivel";
-            lblNombreNivel.Size = new Size(175, 28);
+            lblNombreNivel.Size = new Size(180, 28);
             lblNombreNivel.TabIndex = 1;
             lblNombreNivel.Text = "Nombre del Nivel";
             // 
@@ -224,7 +224,7 @@
             lblRegistroTitle.ForeColor = Color.FromArgb(17, 34, 64);
             lblRegistroTitle.Location = new Point(18, 22);
             lblRegistroTitle.Name = "lblRegistroTitle";
-            lblRegistroTitle.Size = new Size(291, 41);
+            lblRegistroTitle.Size = new Size(303, 41);
             lblRegistroTitle.TabIndex = 0;
             lblRegistroTitle.Text = "Registrar Nuevo Nivel";
             // 
@@ -234,9 +234,9 @@
             panelRegistros.BackColor = Color.White;
             panelRegistros.Controls.Add(dgvNiveles);
             panelRegistros.Controls.Add(lblRegistrosTitle);
-            panelRegistros.Location = new Point(12, 614);
+            panelRegistros.Location = new Point(12, 580);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(1066, 304);
+            panelRegistros.Size = new Size(1045, 358);
             panelRegistros.TabIndex = 6;
             // 
             // dgvNiveles
@@ -279,7 +279,7 @@
             dgvNiveles.RowHeadersWidth = 51;
             dgvNiveles.RowTemplate.Height = 52;
             dgvNiveles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvNiveles.Size = new Size(1066, 230);
+            dgvNiveles.Size = new Size(1045, 284);
             dgvNiveles.TabIndex = 1;
             // 
             // colId
@@ -313,7 +313,7 @@
             lblRegistrosTitle.ForeColor = Color.FromArgb(35, 56, 85);
             lblRegistrosTitle.Location = new Point(24, 20);
             lblRegistrosTitle.Name = "lblRegistrosTitle";
-            lblRegistrosTitle.Size = new Size(287, 41);
+            lblRegistrosTitle.Size = new Size(276, 41);
             lblRegistrosTitle.TabIndex = 0;
             lblRegistrosTitle.Text = "Niveles Registrados";
             // 
@@ -321,6 +321,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 950);
             ClientSize = new Size(1090, 930);
             Controls.Add(panelRegistros);
             Controls.Add(panelRegistro);
@@ -328,6 +330,8 @@
             Name = "NivelesForm";
             Text = "NivelesForm";
             panelHeader.ResumeLayout(false);
+            panelRegistro.ResumeLayout(false);
+            panelRegistro.PerformLayout();
             panelRegistros.ResumeLayout(false);
             panelRegistros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvNiveles).EndInit();

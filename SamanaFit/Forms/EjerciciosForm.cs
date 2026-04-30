@@ -20,6 +20,7 @@ namespace SamanaFit.Ui.Forms
         public EjerciciosForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             CargarEjerciciosDesdeBaseDatos();
             LimpiarFormulario();

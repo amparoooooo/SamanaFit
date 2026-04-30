@@ -78,7 +78,7 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1220, 124);
+            panelHeader.Size = new Size(1199, 124);
             panelHeader.TabIndex = 2;
             // 
             // lblHeaderTitle
@@ -101,7 +101,7 @@
             btnInicio.Font = new Font("Segoe UI", 14F);
             btnInicio.ForeColor = Color.FromArgb(64, 64, 64);
             btnInicio.Image = Properties.Resources.house;
-            btnInicio.Location = new Point(1150, 0);
+            btnInicio.Location = new Point(1129, 0);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(70, 124);
             btnInicio.TabIndex = 3;
@@ -110,7 +110,7 @@
             // 
             // panelForm
             // 
-            panelForm.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelForm.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelForm.BackColor = Color.White;
             panelForm.Controls.Add(btnLimpiar);
             panelForm.Controls.Add(btnEliminar);
@@ -136,7 +136,7 @@
             panelForm.Controls.Add(lblNombre);
             panelForm.Location = new Point(12, 147);
             panelForm.Name = "panelForm";
-            panelForm.Size = new Size(1187, 470);
+            panelForm.Size = new Size(1166, 470);
             panelForm.TabIndex = 3;
             // 
             // btnLimpiar
@@ -430,7 +430,7 @@
             dgvUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.RowTemplate.Height = 44;
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuarios.Size = new Size(1187, 173);
+            dgvUsuarios.Size = new Size(1175, 186);
             dgvUsuarios.TabIndex = 4;
             // 
             // colId
@@ -486,6 +486,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 860);
             ClientSize = new Size(1220, 808);
             Controls.Add(dgvUsuarios);
             Controls.Add(panelForm);

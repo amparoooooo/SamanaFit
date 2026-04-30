@@ -32,17 +32,17 @@
             menuArchivo = new ToolStripMenuItem();
             menuSalir = new ToolStripMenuItem();
             menuAccesos = new ToolStripMenuItem();
-            menuAccionesRapidas = new ToolStripMenuItem();
-            menuCrearRutina = new ToolStripMenuItem();
-            menuRegistrarUsuario = new ToolStripMenuItem();
-            menuVerEjercicios = new ToolStripMenuItem();
-            menuGenerarReporte = new ToolStripMenuItem();
             menuUsuarios = new ToolStripMenuItem();
             menuObjetivos = new ToolStripMenuItem();
             menuNiveles = new ToolStripMenuItem();
             menuEjercicios = new ToolStripMenuItem();
             menuRutinas = new ToolStripMenuItem();
             menuReportes = new ToolStripMenuItem();
+            menuAccionesRapidas = new ToolStripMenuItem();
+            menuCrearRutina = new ToolStripMenuItem();
+            menuRegistrarUsuario = new ToolStripMenuItem();
+            menuVerEjercicios = new ToolStripMenuItem();
+            menuGenerarReporte = new ToolStripMenuItem();
             toolStripAccesos = new ToolStrip();
             toolUsuarios = new ToolStripButton();
             toolObjetivos = new ToolStripButton();
@@ -62,7 +62,6 @@
             panelHeader = new Panel();
             lblHeaderTitle = new Label();
             btnNotificaciones = new Button();
-            btnAdministrador = new Button();
             panelDeAcciones = new Panel();
             lblAccionesRapidas = new Label();
             tableLayoutPanelAcciones = new TableLayoutPanel();
@@ -128,7 +127,7 @@
             // menuSalir
             // 
             menuSalir.Name = "menuSalir";
-            menuSalir.Size = new Size(120, 26);
+            menuSalir.Size = new Size(121, 26);
             menuSalir.Text = "Salir";
             menuSalir.Click += menuSalir_Click;
             // 
@@ -142,42 +141,42 @@
             // menuUsuarios
             // 
             menuUsuarios.Name = "menuUsuarios";
-            menuUsuarios.Size = new Size(156, 26);
+            menuUsuarios.Size = new Size(155, 26);
             menuUsuarios.Text = "Usuarios";
             menuUsuarios.Click += menuUsuarios_Click;
             // 
             // menuObjetivos
             // 
             menuObjetivos.Name = "menuObjetivos";
-            menuObjetivos.Size = new Size(156, 26);
+            menuObjetivos.Size = new Size(155, 26);
             menuObjetivos.Text = "Objetivos";
             menuObjetivos.Click += menuObjetivos_Click;
             // 
             // menuNiveles
             // 
             menuNiveles.Name = "menuNiveles";
-            menuNiveles.Size = new Size(156, 26);
+            menuNiveles.Size = new Size(155, 26);
             menuNiveles.Text = "Niveles";
             menuNiveles.Click += menuNiveles_Click;
             // 
             // menuEjercicios
             // 
             menuEjercicios.Name = "menuEjercicios";
-            menuEjercicios.Size = new Size(156, 26);
+            menuEjercicios.Size = new Size(155, 26);
             menuEjercicios.Text = "Ejercicios";
             menuEjercicios.Click += menuEjercicios_Click;
             // 
             // menuRutinas
             // 
             menuRutinas.Name = "menuRutinas";
-            menuRutinas.Size = new Size(156, 26);
+            menuRutinas.Size = new Size(155, 26);
             menuRutinas.Text = "Rutinas";
             menuRutinas.Click += menuRutinas_Click;
             // 
             // menuReportes
             // 
             menuReportes.Name = "menuReportes";
-            menuReportes.Size = new Size(156, 26);
+            menuReportes.Size = new Size(155, 26);
             menuReportes.Text = "Reportes";
             menuReportes.Click += menuReportes_Click;
             // 
@@ -185,34 +184,34 @@
             // 
             menuAccionesRapidas.DropDownItems.AddRange(new ToolStripItem[] { menuCrearRutina, menuRegistrarUsuario, menuVerEjercicios, menuGenerarReporte });
             menuAccionesRapidas.Name = "menuAccionesRapidas";
-            menuAccionesRapidas.Size = new Size(133, 24);
+            menuAccionesRapidas.Size = new Size(135, 24);
             menuAccionesRapidas.Text = "Acciones rápidas";
             // 
             // menuCrearRutina
             // 
             menuCrearRutina.Name = "menuCrearRutina";
-            menuCrearRutina.Size = new Size(224, 26);
+            menuCrearRutina.Size = new Size(205, 26);
             menuCrearRutina.Text = "Crear Rutina";
             menuCrearRutina.Click += btnCrearRutina_Click;
             // 
             // menuRegistrarUsuario
             // 
             menuRegistrarUsuario.Name = "menuRegistrarUsuario";
-            menuRegistrarUsuario.Size = new Size(224, 26);
+            menuRegistrarUsuario.Size = new Size(205, 26);
             menuRegistrarUsuario.Text = "Registrar Usuario";
             menuRegistrarUsuario.Click += btnRegistrarUsuario_Click;
             // 
             // menuVerEjercicios
             // 
             menuVerEjercicios.Name = "menuVerEjercicios";
-            menuVerEjercicios.Size = new Size(224, 26);
+            menuVerEjercicios.Size = new Size(205, 26);
             menuVerEjercicios.Text = "Ver Ejercicios";
             menuVerEjercicios.Click += btnVerEjercicios_Click;
             // 
             // menuGenerarReporte
             // 
             menuGenerarReporte.Name = "menuGenerarReporte";
-            menuGenerarReporte.Size = new Size(224, 26);
+            menuGenerarReporte.Size = new Size(205, 26);
             menuGenerarReporte.Text = "Generar Reporte";
             menuGenerarReporte.Click += btnGenerarReporte_Click;
             // 
@@ -232,7 +231,7 @@
             toolUsuarios.Image = Ui.Properties.Resources.users;
             toolUsuarios.ImageTransparentColor = Color.Magenta;
             toolUsuarios.Name = "toolUsuarios";
-            toolUsuarios.Size = new Size(76, 24);
+            toolUsuarios.Size = new Size(29, 24);
             toolUsuarios.Text = "Usuarios";
             toolUsuarios.Click += menuUsuarios_Click;
             // 
@@ -262,7 +261,7 @@
             toolRutinas.Image = Ui.Properties.Resources.list_checks;
             toolRutinas.ImageTransparentColor = Color.Magenta;
             toolRutinas.Name = "toolRutinas";
-            toolRutinas.Size = new Size(64, 24);
+            toolRutinas.Size = new Size(29, 24);
             toolRutinas.Text = "Rutinas";
             toolRutinas.Click += menuRutinas_Click;
             // 
@@ -272,7 +271,7 @@
             toolEjercicios.Image = Ui.Properties.Resources.dumbbell;
             toolEjercicios.ImageTransparentColor = Color.Magenta;
             toolEjercicios.Name = "toolEjercicios";
-            toolEjercicios.Size = new Size(82, 24);
+            toolEjercicios.Size = new Size(29, 24);
             toolEjercicios.Text = "Ejercicios";
             toolEjercicios.Click += menuEjercicios_Click;
             // 
@@ -282,7 +281,7 @@
             toolReportes.Image = Ui.Properties.Resources.chart_column;
             toolReportes.ImageTransparentColor = Color.Magenta;
             toolReportes.Name = "toolReportes";
-            toolReportes.Size = new Size(76, 24);
+            toolReportes.Size = new Size(29, 24);
             toolReportes.Text = "Reportes";
             toolReportes.Click += menuReportes_Click;
             // 
@@ -311,7 +310,7 @@
             btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnReportes.ForeColor = Color.White;
             btnReportes.Image = Ui.Properties.Resources.chart_column;
-            btnReportes.Location = new Point(0, 380);
+            btnReportes.Location = new Point(0, 330);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(250, 50);
             btnReportes.TabIndex = 7;
@@ -328,7 +327,7 @@
             btnRutinas.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnRutinas.ForeColor = Color.White;
             btnRutinas.Image = Ui.Properties.Resources.list_checks;
-            btnRutinas.Location = new Point(0, 330);
+            btnRutinas.Location = new Point(0, 280);
             btnRutinas.Name = "btnRutinas";
             btnRutinas.Size = new Size(250, 50);
             btnRutinas.TabIndex = 6;
@@ -345,7 +344,7 @@
             btnEjercicios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnEjercicios.ForeColor = Color.White;
             btnEjercicios.Image = Ui.Properties.Resources.dumbbell;
-            btnEjercicios.Location = new Point(0, 280);
+            btnEjercicios.Location = new Point(0, 230);
             btnEjercicios.Name = "btnEjercicios";
             btnEjercicios.Size = new Size(250, 50);
             btnEjercicios.TabIndex = 5;
@@ -362,7 +361,7 @@
             btnNiveles.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnNiveles.ForeColor = Color.White;
             btnNiveles.Image = Ui.Properties.Resources.trending_up;
-            btnNiveles.Location = new Point(0, 230);
+            btnNiveles.Location = new Point(0, 180);
             btnNiveles.Name = "btnNiveles";
             btnNiveles.Size = new Size(250, 50);
             btnNiveles.TabIndex = 4;
@@ -379,7 +378,7 @@
             btnObjetivos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnObjetivos.ForeColor = Color.White;
             btnObjetivos.Image = Ui.Properties.Resources.target;
-            btnObjetivos.Location = new Point(0, 180);
+            btnObjetivos.Location = new Point(0, 130);
             btnObjetivos.Name = "btnObjetivos";
             btnObjetivos.Size = new Size(250, 50);
             btnObjetivos.TabIndex = 3;
@@ -396,7 +395,7 @@
             btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnUsuarios.ForeColor = Color.White;
             btnUsuarios.Image = Ui.Properties.Resources.users;
-            btnUsuarios.Location = new Point(0, 130);
+            btnUsuarios.Location = new Point(0, 80);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(250, 50);
             btnUsuarios.TabIndex = 2;
@@ -427,7 +426,7 @@
             btnSalir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSalir.ForeColor = Color.White;
             btnSalir.Image = Ui.Properties.Resources.log_out;
-            btnSalir.Location = new Point(0, 677);
+            btnSalir.Location = new Point(0, 622);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(250, 50);
             btnSalir.TabIndex = 8;
@@ -441,7 +440,6 @@
             panelHeader.BackColor = Color.White;
             panelHeader.Controls.Add(lblHeaderTitle);
             panelHeader.Controls.Add(btnNotificaciones);
-            panelHeader.Controls.Add(btnAdministrador);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(250, 55);
             panelHeader.Name = "panelHeader";
@@ -468,27 +466,11 @@
             btnNotificaciones.Font = new Font("Segoe UI", 14F);
             btnNotificaciones.ForeColor = Color.FromArgb(64, 64, 64);
             btnNotificaciones.Image = Ui.Properties.Resources.bell;
-            btnNotificaciones.Location = new Point(607, 0);
+            btnNotificaciones.Location = new Point(807, 0);
             btnNotificaciones.Name = "btnNotificaciones";
             btnNotificaciones.Size = new Size(70, 124);
             btnNotificaciones.TabIndex = 2;
             btnNotificaciones.Click += btnNotificaciones_Click;
-            // 
-            // btnAdministrador
-            // 
-            btnAdministrador.Dock = DockStyle.Right;
-            btnAdministrador.FlatAppearance.BorderSize = 0;
-            btnAdministrador.FlatStyle = FlatStyle.Flat;
-            btnAdministrador.Font = new Font("Segoe UI", 12F);
-            btnAdministrador.ForeColor = Color.FromArgb(64, 64, 64);
-            btnAdministrador.Image = Ui.Properties.Resources.circle_user;
-            btnAdministrador.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdministrador.Location = new Point(677, 0);
-            btnAdministrador.Name = "btnAdministrador";
-            btnAdministrador.Size = new Size(200, 124);
-            btnAdministrador.TabIndex = 1;
-            btnAdministrador.Text = " Administrador";
-            btnAdministrador.Click += btnAdministrador_Click;
             // 
             // panelDeAcciones
             // 
@@ -872,6 +854,7 @@
             cardEjercicios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -910,7 +893,6 @@
         private System.Windows.Forms.Panel panelHeader;
         private System.Windows.Forms.Label lblHeaderTitle;
         private System.Windows.Forms.Button btnNotificaciones;
-        private System.Windows.Forms.Button btnAdministrador;
         private System.Windows.Forms.Panel panelDeAcciones;
         private System.Windows.Forms.Label lblAccionesRapidas;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAcciones;

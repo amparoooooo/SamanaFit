@@ -19,6 +19,7 @@ namespace SamanaFit.Ui.Forms
         public ObjetivosForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             CargarObjetivosDesdeBaseDatos();
             LimpiarFormulario();

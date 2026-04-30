@@ -22,6 +22,7 @@ namespace SamanaFit.Ui.Forms
         public UsuariosForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             CargarUsuariosDesdeBaseDatos();
             LimpiarFormulario();
@@ -388,7 +389,7 @@ namespace SamanaFit.Ui.Forms
         {
             var nombre = txtNombre.Text.Trim();
             var apellido = txtApellido.Text.Trim();
-            return $"{nombre}|{apellido}";
+            return string.Join(' ', new[] { nombre, apellido }.Where(s => !string.IsNullOrWhiteSpace(s)));
         }
 
         private static void SepararNombreCompleto(string? nombreCompleto, out string nombre, out string apellido)

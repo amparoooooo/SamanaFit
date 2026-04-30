@@ -278,7 +278,7 @@
             // 
             // panelResultados
             // 
-            panelResultados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelResultados.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelResultados.BackColor = Color.White;
             panelResultados.Controls.Add(dgvResultados);
             panelResultados.Controls.Add(lblResultadosTitle);
@@ -389,6 +389,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 1240);
             ClientSize = new Size(1428, 768);
             Controls.Add(panelResultados);
             Controls.Add(panelFiltros);
