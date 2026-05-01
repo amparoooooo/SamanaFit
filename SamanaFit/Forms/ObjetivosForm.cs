@@ -176,8 +176,8 @@ namespace SamanaFit.Ui.Forms
             {
                 dgvObjetivos.Rows.Add(
                     objetivo.IdObjetivo,
-                    objetivo.Nombre,
-                    objetivo.Descripcion);
+                    objetivo.Nombre ?? "",
+                    objetivo.Descripcion ?? "");
             }
 
             dgvObjetivos.ClearSelection();

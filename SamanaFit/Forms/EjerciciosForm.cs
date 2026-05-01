@@ -189,14 +189,17 @@ namespace SamanaFit.Ui.Forms
 
             foreach (var ejercicio in ejercicios)
             {
+                if (ejercicio == null) continue;
+
                 dgvEjercicios.Rows.Add(
                     ejercicio.IdEjercicio,
-                    ejercicio.Nombre,
-                    ejercicio.Tipo,
-                    ObtenerTextoNivelPorId(ejercicio.IdNivel),
-                    ejercicio.DuracionMinutos?.ToString() ?? string.Empty,
-                    ejercicio.CaloriasQuemadas?.ToString() ?? string.Empty,
-                    ejercicio.Descripcion ?? string.Empty);
+                    ejercicio.Nombre ?? "",
+                    ejercicio.Tipo ?? "",
+                    ObtenerTextoNivelPorId(ejercicio.IdNivel) ?? "",
+                    ejercicio.DuracionMinutos?.ToString() ?? "",
+                    ejercicio.CaloriasQuemadas?.ToString() ?? "",
+                    ejercicio.Descripcion ?? ""
+                );
             }
 
             dgvEjercicios.ClearSelection();

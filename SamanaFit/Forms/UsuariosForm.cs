@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SamanaFit.Data.Context;
+﻿using SamanaFit.Data.Context;
 using SamanaFit.Data.Models;
+using System.Data;
 
 namespace SamanaFit.Ui.Forms
 {
@@ -46,8 +39,7 @@ namespace SamanaFit.Ui.Forms
 
         private void UsuariosForm_Shown(object? sender, EventArgs e)
         {
-            // Al mostrarse el formulario, WinForms puede volver a seleccionar la primera fila.
-            // Forzamos el estado “nuevo registro” con los campos vacíos.
+            
             LimpiarFormulario();
         }
 
@@ -272,15 +264,19 @@ namespace SamanaFit.Ui.Forms
 
             foreach (var usuario in usuarios)
             {
-                SepararNombreCompleto(usuario.Nombre, out var nombre, out var apellido);
+                if (usuario == null) continue;
+
+                SepararNombreCompleto(usuario.Nombre ?? "", out var nombre, out var apellido);
+
                 dgvUsuarios.Rows.Add(
                     usuario.IdUsuario.ToString("D3"),
-                    nombre,
-                    apellido,
-                    usuario.Edad,
-                    ObtenerTextoComboPorId(cmbSexo, _idsSexos, usuario.IdSexo),
-                    ObtenerTextoComboPorId(cmbNivelFisico, _idsNiveles, usuario.IdNivel),
-                    ObtenerTextoComboPorId(cmbObjetivo, _idsObjetivos, usuario.IdObjetivo));
+                    nombre ?? "",
+                    apellido ?? "",
+                    usuario.Edad?.ToString() ?? "",
+                    ObtenerTextoComboPorId(cmbSexo, _idsSexos, usuario.IdSexo) ?? "",
+                    ObtenerTextoComboPorId(cmbNivelFisico, _idsNiveles, usuario.IdNivel) ?? "",
+                    ObtenerTextoComboPorId(cmbObjetivo, _idsObjetivos, usuario.IdObjetivo) ?? ""
+                );
             }
 
             dgvUsuarios.ClearSelection();
