@@ -1,7 +1,7 @@
 SamanáFit Pro
 
 
-SamanáFit Pro es un sistema inteligente generador de rutinas de entrenamiento personalizadas, 
+SamanáFit Pro es un sistema que permite ingresar usuarios, ejercicios, etc.. Para poder generar rutinas de entrenamiento personalizadas, 
 diseñado para usuarios que desean mejorar su condición física según su objetivo.
 
 
@@ -20,8 +20,8 @@ SamanaFitPro/
 │
 ├── SamanaFit.UI/                 (WinForms Project)
 │   ├── Services/
-│   │   ├── IRutinaService.cs
-│   │   └── RutinaService.cs
+│   │   ├── RutinaService.cs
+│   │  
 │   │
 │   ├── Forms/
 │   │   ├── MainForm.cs
