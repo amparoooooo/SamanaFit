@@ -1,0 +1,40 @@
+# Node 20 on GitHub-hosted runners is deprecated; use action versions that run on Node 24+.
+# See: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+name: build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+env:
+  DOTNET_NOLOGO: true
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Build
+        run: dotnet build SamanaFit.Tests/SamanaFit.Tests.csproj -c Release
+
+      - name: Test
+        run: >
+          dotnet test SamanaFit.Tests/SamanaFit.Tests.csproj -c Release
+          --no-build
+          --logger "trx;LogFileName=TestResults.trx"
+          --results-directory "${{ runner.temp }}/TestResults"
+
+      - name: Test report
+        if: success() || failure()
+        uses: dorny/test-reporter@v3
+        with:
+          name: .NET tests
+          path: "${{ runner.temp }}/TestResults/*.trx"
+          reporter: dotnet-trx
