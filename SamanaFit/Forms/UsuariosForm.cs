@@ -432,7 +432,7 @@ namespace SamanaFit.Ui.Forms
         private static string ObtenerTextoComboPorId(ComboBox comboBox, IReadOnlyList<int> ids, int? id)
         {
             var idx = ObtenerIndiceComboPorId(ids, id);
-            return idx > 0 ? comboBox.Items[idx].ToString() ?? string.Empty : string.Empty;
+            return idx > 0 ? comboBox.Items[idx]?.ToString() ?? string.Empty : string.Empty;
         }
 
         private int? ObtenerIdNivelSeleccionado()
