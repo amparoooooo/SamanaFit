@@ -190,8 +190,8 @@ namespace SamanaFit.Ui.Forms
             {
                 dgvEjercicios.Rows.Add(
                     ejercicio.IdEjercicio,
-                    ejercicio.Nombre,
-                    ejercicio.Tipo,
+                    ejercicio.Nombre ?? string.Empty,
+                    ejercicio.Tipo ?? string.Empty,
                     ObtenerTextoNivelPorId(ejercicio.IdNivel),
                     ejercicio.DuracionMinutos?.ToString() ?? string.Empty,
                     ejercicio.CaloriasQuemadas?.ToString() ?? string.Empty,
