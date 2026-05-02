@@ -270,12 +270,13 @@ namespace SamanaFit.Ui.Forms
 
                 dgvUsuarios.Rows.Add(
                     usuario.IdUsuario.ToString("D3"),
-                    nombre,
-                    apellido,
-                    (object?)usuario.Edad ?? DBNull.Value,
-                    ObtenerTextoComboPorId(cmbSexo, _idsSexos, usuario.IdSexo),
-                    ObtenerTextoComboPorId(cmbNivelFisico, _idsNiveles, usuario.IdNivel),
-                    ObtenerTextoComboPorId(cmbObjetivo, _idsObjetivos, usuario.IdObjetivo));
+                    nombre ?? "",
+                    apellido ?? "",
+                    usuario.Edad?.ToString() ?? "",
+                    ObtenerTextoComboPorId(cmbSexo, _idsSexos, usuario.IdSexo) ?? "",
+                    ObtenerTextoComboPorId(cmbNivelFisico, _idsNiveles, usuario.IdNivel) ?? "",
+                    ObtenerTextoComboPorId(cmbObjetivo, _idsObjetivos, usuario.IdObjetivo) ?? ""
+                );
             }
 
             dgvUsuarios.ClearSelection();
