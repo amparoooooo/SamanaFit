@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-using SamanaFit.Data.Context;
+﻿using ClosedXML.Excel;
 using Microsoft.EntityFrameworkCore;
+using PdfSharpCore.Drawing;
+using PdfSharpCore.Pdf;
+using SamanaFit.Data.Context;
+using System.Data;
 
 namespace SamanaFit.Ui.Forms
 {
@@ -15,6 +12,7 @@ namespace SamanaFit.Ui.Forms
         public ReportesForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
         }
         private void ConfigurarFormulario()
@@ -42,12 +40,68 @@ namespace SamanaFit.Ui.Forms
 
         private void btnExportarPdf_Click(object? sender, EventArgs e)
         {
-            MessageBox.Show("Exportación PDF en construcción.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvResultados.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para exportar.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using var dialog = new SaveFileDialog
+            {
+                Title = "Guardar reporte en PDF",
+                Filter = "PDF (*.pdf)|*.pdf",
+                DefaultExt = "pdf",
+                AddExtension = true,
+                FileName = $"reporte_{DateTime.Now:yyyyMMdd_HHmm}.pdf"
+            };
+
+            if (dialog.ShowDialog(this) != DialogResult.OK)
+            {
+                return;
+            }
+
+            try
+            {
+                ExportarPdf(dialog.FileName);
+                MessageBox.Show("Reporte PDF generado correctamente.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo generar el PDF.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnExportarExcel_Click(object? sender, EventArgs e)
         {
-            MessageBox.Show("Exportación Excel en construcción.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (dgvResultados.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay datos para exportar.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            using var dialog = new SaveFileDialog
+            {
+                Title = "Guardar reporte en Excel",
+                Filter = "Excel (*.xlsx)|*.xlsx",
+                DefaultExt = "xlsx",
+                AddExtension = true,
+                FileName = $"reporte_{DateTime.Now:yyyyMMdd_HHmm}.xlsx"
+            };
+
+            if (dialog.ShowDialog(this) != DialogResult.OK)
+            {
+                return;
+            }
+
+            try
+            {
+                ExportarExcel(dialog.FileName);
+                MessageBox.Show("Reporte Excel generado correctamente.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"No se pudo generar el Excel.\n\n{ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnReporteUsuarios_Click(object? sender, EventArgs e)
@@ -89,7 +143,8 @@ namespace SamanaFit.Ui.Forms
 
             foreach (var usuario in context.Usuarios.OrderBy(u => u.IdUsuario).ToList())
             {
-                cmbUsuario.Items.Add(string.IsNullOrWhiteSpace(usuario.Nombre) ? $"Usuario {usuario.IdUsuario}" : usuario.Nombre);
+                var nombre = string.IsNullOrWhiteSpace(usuario.Nombre) ? $"Usuario {usuario.IdUsuario}" : usuario.Nombre;
+                cmbUsuario.Items.Add(NormalizarNombreUsuario(nombre));
             }
 
             var objetivos = context.Objetivos
@@ -140,7 +195,7 @@ namespace SamanaFit.Ui.Forms
                 {
                     r.IdRutina,
                     Usuario = r.IdUsuarioNavigation != null && !string.IsNullOrWhiteSpace(r.IdUsuarioNavigation.Nombre)
-                        ? r.IdUsuarioNavigation.Nombre
+                        ? NormalizarNombreUsuario(r.IdUsuarioNavigation.Nombre)
                         : (r.IdUsuario.HasValue ? $"Usuario {r.IdUsuario.Value}" : string.Empty),
                     Objetivo = r.IdObjetivoNavigation != null && !string.IsNullOrWhiteSpace(r.IdObjetivoNavigation.Nombre)
                         ? r.IdObjetivoNavigation.Nombre
@@ -190,6 +245,136 @@ namespace SamanaFit.Ui.Forms
 
             dgvResultados.ClearSelection();
             dgvResultados.CurrentCell = null;
+        }
+
+        private static string NormalizarNombreUsuario(string valor)
+        {
+            return (valor ?? string.Empty).Replace('|', ' ').Trim();
+        }
+
+        private void ExportarExcel(string filePath)
+        {
+            using var wb = new XLWorkbook();
+            var ws = wb.Worksheets.Add("Reporte");
+
+            var colCount = dgvResultados.Columns.Count;
+            for (var c = 0; c < colCount; c++)
+            {
+                ws.Cell(1, c + 1).Value = dgvResultados.Columns[c].HeaderText;
+                ws.Cell(1, c + 1).Style.Font.Bold = true;
+            }
+
+            var rExcel = 2;
+            foreach (DataGridViewRow row in dgvResultados.Rows)
+            {
+                if (row.IsNewRow)
+                {
+                    continue;
+                }
+
+                for (var c = 0; c < colCount; c++)
+                {
+                    ws.Cell(rExcel, c + 1).Value = row.Cells[c].Value?.ToString() ?? string.Empty;
+                }
+
+                rExcel++;
+            }
+
+            ws.Columns().AdjustToContents();
+            wb.SaveAs(filePath);
+        }
+
+        private void ExportarPdf(string filePath)
+        {
+            var doc = new PdfDocument();
+            doc.Info.Title = "Reporte del sistema";
+
+            var page = doc.AddPage();
+            page.Size = PdfSharpCore.PageSize.A4;
+            var gfx = XGraphics.FromPdfPage(page);
+
+            var fontTitle = new XFont("Arial", 14, XFontStyle.Bold);
+            var fontHeader = new XFont("Arial", 9, XFontStyle.Bold);
+            var fontCell = new XFont("Arial", 9, XFontStyle.Regular);
+
+            const double margin = 36; // 0.5 inch
+            var y = margin;
+
+            gfx.DrawString("Reporte del sistema", fontTitle, XBrushes.Black, new XRect(margin, y, page.Width - margin * 2, 20), XStringFormats.TopLeft);
+            y += 26;
+            gfx.DrawString($"Generado: {DateTime.Now:dd/MM/yyyy HH:mm}", fontCell, XBrushes.Black, new XRect(margin, y, page.Width - margin * 2, 14), XStringFormats.TopLeft);
+            y += 20;
+
+            var headers = dgvResultados.Columns.Cast<DataGridViewColumn>()
+                .Select(c => c.HeaderText)
+                .ToList();
+
+            var rows = dgvResultados.Rows.Cast<DataGridViewRow>()
+                .Where(r => !r.IsNewRow)
+                .Select(r => Enumerable.Range(0, dgvResultados.Columns.Count)
+                    .Select(i => r.Cells[i].Value?.ToString() ?? string.Empty)
+                    .ToList())
+                .ToList();
+
+            var availableWidth = page.Width - margin * 2;
+            var colCount = headers.Count;
+            var colWidth = availableWidth / Math.Max(1, colCount);
+
+            double rowHeight = 18;
+            double headerHeight = 20;
+
+            void NewPage()
+            {
+                page = doc.AddPage();
+                page.Size = PdfSharpCore.PageSize.A4;
+                gfx = XGraphics.FromPdfPage(page);
+                y = margin;
+            }
+
+            void DrawHeader()
+            {
+                var x = margin;
+                for (var i = 0; i < colCount; i++)
+                {
+                    var rect = new XRect(x, y, colWidth, headerHeight);
+                    gfx.DrawRectangle(XBrushes.LightGray, rect);
+                    gfx.DrawRectangle(XPens.Gray, rect);
+                    gfx.DrawString(headers[i], fontHeader, XBrushes.Black, rect, XStringFormats.Center);
+                    x += colWidth;
+                }
+                y += headerHeight;
+            }
+
+            DrawHeader();
+
+            foreach (var row in rows)
+            {
+                if (y + rowHeight + margin > page.Height)
+                {
+                    NewPage();
+                    DrawHeader();
+                }
+
+                var x = margin;
+                for (var i = 0; i < colCount; i++)
+                {
+                    var rect = new XRect(x, y, colWidth, rowHeight);
+                    gfx.DrawRectangle(XPens.LightGray, rect);
+
+                    var text = row[i];
+                    if (text.Length > 40)
+                    {
+                        text = text.Substring(0, 37) + "...";
+                    }
+
+                    gfx.DrawString(text, fontCell, XBrushes.Black, new XRect(rect.X + 3, rect.Y + 3, rect.Width - 6, rect.Height - 6), XStringFormats.TopLeft);
+                    x += colWidth;
+                }
+
+                y += rowHeight;
+            }
+
+            doc.Save(filePath);
         }
     }
 }

@@ -56,9 +56,6 @@
             txtIdRutina = new TextBox();
             lblIdRutina = new Label();
             panelEjerciciosRutina = new Panel();
-            btnDetalleEliminar = new Button();
-            btnDetalleEditar = new Button();
-            btnDetalleAgregar = new Button();
             dgvEjerciciosRutina = new DataGridView();
             colEjercicio = new DataGridViewTextBoxColumn();
             colSeries = new DataGridViewTextBoxColumn();
@@ -145,7 +142,7 @@
             panelFormulario.Controls.Add(lblIdRutina);
             panelFormulario.Location = new Point(12, 110);
             panelFormulario.Name = "panelFormulario";
-            panelFormulario.Size = new Size(1175, 420);
+            panelFormulario.Size = new Size(1154, 420);
             panelFormulario.TabIndex = 1;
             // 
             // btnGenerarRutina
@@ -249,7 +246,6 @@
             txtDuracionSemanas.Name = "txtDuracionSemanas";
             txtDuracionSemanas.Size = new Size(570, 34);
             txtDuracionSemanas.TabIndex = 11;
-            txtDuracionSemanas.Text = string.Empty;
             // 
             // lblDuracionSemanas
             // 
@@ -374,57 +370,12 @@
             // 
             panelEjerciciosRutina.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelEjerciciosRutina.BackColor = Color.White;
-            panelEjerciciosRutina.Controls.Add(btnDetalleEliminar);
-            panelEjerciciosRutina.Controls.Add(btnDetalleEditar);
-            panelEjerciciosRutina.Controls.Add(btnDetalleAgregar);
             panelEjerciciosRutina.Controls.Add(dgvEjerciciosRutina);
             panelEjerciciosRutina.Controls.Add(lblEjerciciosRutinaTitle);
             panelEjerciciosRutina.Location = new Point(12, 542);
             panelEjerciciosRutina.Name = "panelEjerciciosRutina";
-            panelEjerciciosRutina.Size = new Size(1175, 260);
+            panelEjerciciosRutina.Size = new Size(1154, 260);
             panelEjerciciosRutina.TabIndex = 2;
-            // 
-            // btnDetalleEliminar
-            // 
-            btnDetalleEliminar.BackColor = Color.FromArgb(255, 44, 66);
-            btnDetalleEliminar.FlatAppearance.BorderSize = 0;
-            btnDetalleEliminar.FlatStyle = FlatStyle.Flat;
-            btnDetalleEliminar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnDetalleEliminar.ForeColor = Color.White;
-            btnDetalleEliminar.Location = new Point(1018, 20);
-            btnDetalleEliminar.Name = "btnDetalleEliminar";
-            btnDetalleEliminar.Size = new Size(148, 36);
-            btnDetalleEliminar.TabIndex = 4;
-            btnDetalleEliminar.Text = "🗑️  Eliminar";
-            btnDetalleEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnDetalleEditar
-            // 
-            btnDetalleEditar.BackColor = Color.FromArgb(52, 126, 238);
-            btnDetalleEditar.FlatAppearance.BorderSize = 0;
-            btnDetalleEditar.FlatStyle = FlatStyle.Flat;
-            btnDetalleEditar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnDetalleEditar.ForeColor = Color.White;
-            btnDetalleEditar.Location = new Point(864, 20);
-            btnDetalleEditar.Name = "btnDetalleEditar";
-            btnDetalleEditar.Size = new Size(148, 36);
-            btnDetalleEditar.TabIndex = 3;
-            btnDetalleEditar.Text = "✏️  Editar";
-            btnDetalleEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnDetalleAgregar
-            // 
-            btnDetalleAgregar.BackColor = Color.FromArgb(0, 184, 107);
-            btnDetalleAgregar.FlatAppearance.BorderSize = 0;
-            btnDetalleAgregar.FlatStyle = FlatStyle.Flat;
-            btnDetalleAgregar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnDetalleAgregar.ForeColor = Color.White;
-            btnDetalleAgregar.Location = new Point(710, 20);
-            btnDetalleAgregar.Name = "btnDetalleAgregar";
-            btnDetalleAgregar.Size = new Size(148, 36);
-            btnDetalleAgregar.TabIndex = 2;
-            btnDetalleAgregar.Text = "➕  Agregar";
-            btnDetalleAgregar.UseVisualStyleBackColor = false;
             // 
             // dgvEjerciciosRutina
             // 
@@ -466,7 +417,7 @@
             dgvEjerciciosRutina.RowHeadersWidth = 51;
             dgvEjerciciosRutina.RowTemplate.Height = 52;
             dgvEjerciciosRutina.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEjerciciosRutina.Size = new Size(1115, 170);
+            dgvEjerciciosRutina.Size = new Size(1094, 170);
             dgvEjerciciosRutina.TabIndex = 1;
             // 
             // colEjercicio
@@ -511,12 +462,13 @@
             // panelRutinasRegistradas
             // 
             panelRutinasRegistradas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelRutinasRegistradas.AutoScroll = true;
             panelRutinasRegistradas.BackColor = Color.White;
             panelRutinasRegistradas.Controls.Add(dgvRutinas);
             panelRutinasRegistradas.Controls.Add(lblRutinasRegistradasTitle);
             panelRutinasRegistradas.Location = new Point(12, 820);
             panelRutinasRegistradas.Name = "panelRutinasRegistradas";
-            panelRutinasRegistradas.Size = new Size(1175, 420);
+            panelRutinasRegistradas.Size = new Size(1154, 610);
             panelRutinasRegistradas.TabIndex = 3;
             // 
             // dgvRutinas
@@ -558,8 +510,9 @@
             dgvRutinas.RowHeadersVisible = false;
             dgvRutinas.RowHeadersWidth = 51;
             dgvRutinas.RowTemplate.Height = 52;
+            dgvRutinas.ScrollBars = ScrollBars.Vertical;
             dgvRutinas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRutinas.Size = new Size(1115, 320);
+            dgvRutinas.Size = new Size(1094, 510);
             dgvRutinas.TabIndex = 1;
             // 
             // colRutinaId
@@ -621,7 +574,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            AutoScrollMinSize = new Size(0, 1120);
+            AutoScrollMinSize = new Size(0, 1500);
             ClientSize = new Size(1220, 930);
             Controls.Add(panelRutinasRegistradas);
             Controls.Add(panelEjerciciosRutina);
@@ -667,9 +620,6 @@
         private TextBox txtIdRutina;
         private Label lblIdRutina;
         private Panel panelEjerciciosRutina;
-        private Button btnDetalleEliminar;
-        private Button btnDetalleEditar;
-        private Button btnDetalleAgregar;
         private DataGridView dgvEjerciciosRutina;
         private DataGridViewTextBoxColumn colEjercicio;
         private DataGridViewTextBoxColumn colSeries;

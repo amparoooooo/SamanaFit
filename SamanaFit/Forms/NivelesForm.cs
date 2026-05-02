@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SamanaFit.Data.Context;
+﻿using SamanaFit.Data.Context;
 using SamanaFit.Data.Models;
+using System.Data;
 
 namespace SamanaFit.Ui.Forms
 {
@@ -19,6 +12,7 @@ namespace SamanaFit.Ui.Forms
         public NivelesForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             CargarNivelesDesdeBaseDatos();
             LimpiarFormulario();

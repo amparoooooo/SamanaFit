@@ -75,7 +75,7 @@
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1094, 124);
+            panelHeader.Size = new Size(1235, 124);
             panelHeader.TabIndex = 5;
             // 
             // lblHeaderTitle
@@ -98,7 +98,7 @@
             btnInicio.Font = new Font("Segoe UI", 14F);
             btnInicio.ForeColor = Color.FromArgb(64, 64, 64);
             btnInicio.Image = Properties.Resources.house;
-            btnInicio.Location = new Point(1024, 0);
+            btnInicio.Location = new Point(1165, 0);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(70, 124);
             btnInicio.TabIndex = 1;
@@ -128,7 +128,7 @@
             panelFormulario.Controls.Add(lblFormularioTitle);
             panelFormulario.Location = new Point(12, 147);
             panelFormulario.Name = "panelFormulario";
-            panelFormulario.Size = new Size(1070, 538);
+            panelFormulario.Size = new Size(1190, 461);
             panelFormulario.TabIndex = 6;
             // 
             // btnLimpiar
@@ -138,7 +138,7 @@
             btnLimpiar.FlatStyle = FlatStyle.Flat;
             btnLimpiar.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             btnLimpiar.ForeColor = Color.White;
-            btnLimpiar.Location = new Point(558, 456);
+            btnLimpiar.Location = new Point(633, 377);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(170, 52);
             btnLimpiar.TabIndex = 16;
@@ -153,7 +153,7 @@
             btnEliminar.FlatStyle = FlatStyle.Flat;
             btnEliminar.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(382, 456);
+            btnEliminar.Location = new Point(413, 377);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(170, 52);
             btnEliminar.TabIndex = 15;
@@ -168,7 +168,7 @@
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(206, 456);
+            btnEditar.Location = new Point(216, 377);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(170, 52);
             btnEditar.TabIndex = 14;
@@ -183,7 +183,7 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(30, 456);
+            btnGuardar.Location = new Point(30, 377);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(170, 52);
             btnGuardar.TabIndex = 13;
@@ -199,7 +199,7 @@
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.PlaceholderText = "Descripción del ejercicio...";
-            txtDescripcion.Size = new Size(502, 108);
+            txtDescripcion.Size = new Size(502, 78);
             txtDescripcion.TabIndex = 12;
             // 
             // lblDescripcion
@@ -230,7 +230,7 @@
             lblDuracion.ForeColor = Color.FromArgb(35, 56, 85);
             lblDuracion.Location = new Point(30, 249);
             lblDuracion.Name = "lblDuracion";
-            lblDuracion.Size = new Size(205, 28);
+            lblDuracion.Size = new Size(211, 28);
             lblDuracion.TabIndex = 9;
             lblDuracion.Text = "Duración (Minutos) *";
             // 
@@ -251,7 +251,7 @@
             lblCalorias.ForeColor = Color.FromArgb(35, 56, 85);
             lblCalorias.Location = new Point(538, 159);
             lblCalorias.Name = "lblCalorias";
-            lblCalorias.Size = new Size(178, 28);
+            lblCalorias.Size = new Size(192, 28);
             lblCalorias.TabIndex = 7;
             lblCalorias.Text = "Calorías Quemadas";
             // 
@@ -273,7 +273,7 @@
             lblTipoEjercicio.ForeColor = Color.FromArgb(35, 56, 85);
             lblTipoEjercicio.Location = new Point(30, 159);
             lblTipoEjercicio.Name = "lblTipoEjercicio";
-            lblTipoEjercicio.Size = new Size(179, 28);
+            lblTipoEjercicio.Size = new Size(184, 28);
             lblTipoEjercicio.TabIndex = 5;
             lblTipoEjercicio.Text = "Tipo de Ejercicio *";
             // 
@@ -295,7 +295,7 @@
             lblNivelFisico.ForeColor = Color.FromArgb(35, 56, 85);
             lblNivelFisico.Location = new Point(538, 69);
             lblNivelFisico.Name = "lblNivelFisico";
-            lblNivelFisico.Size = new Size(132, 28);
+            lblNivelFisico.Size = new Size(136, 28);
             lblNivelFisico.TabIndex = 3;
             lblNivelFisico.Text = "Nivel Físico *";
             // 
@@ -316,7 +316,7 @@
             lblNombreEjercicio.ForeColor = Color.FromArgb(35, 56, 85);
             lblNombreEjercicio.Location = new Point(30, 69);
             lblNombreEjercicio.Name = "lblNombreEjercicio";
-            lblNombreEjercicio.Size = new Size(194, 28);
+            lblNombreEjercicio.Size = new Size(225, 28);
             lblNombreEjercicio.TabIndex = 1;
             lblNombreEjercicio.Text = "Nombre del Ejercicio *";
             // 
@@ -327,19 +327,19 @@
             lblFormularioTitle.ForeColor = Color.FromArgb(35, 56, 85);
             lblFormularioTitle.Location = new Point(30, 20);
             lblFormularioTitle.Name = "lblFormularioTitle";
-            lblFormularioTitle.Size = new Size(357, 41);
+            lblFormularioTitle.Size = new Size(342, 41);
             lblFormularioTitle.TabIndex = 0;
             lblFormularioTitle.Text = "Información del Ejercicio";
             // 
             // panelRegistros
             // 
-            panelRegistros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelRegistros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelRegistros.BackColor = Color.White;
             panelRegistros.Controls.Add(dgvEjercicios);
             panelRegistros.Controls.Add(lblRegistrosTitle);
-            panelRegistros.Location = new Point(12, 701);
+            panelRegistros.Location = new Point(12, 633);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(1070, 305);
+            panelRegistros.Size = new Size(1190, 373);
             panelRegistros.TabIndex = 7;
             // 
             // dgvEjercicios
@@ -382,7 +382,7 @@
             dgvEjercicios.RowHeadersWidth = 51;
             dgvEjercicios.RowTemplate.Height = 52;
             dgvEjercicios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEjercicios.Size = new Size(1070, 230);
+            dgvEjercicios.Size = new Size(1190, 298);
             dgvEjercicios.TabIndex = 1;
             // 
             // colId
@@ -448,7 +448,7 @@
             lblRegistrosTitle.ForeColor = Color.FromArgb(35, 56, 85);
             lblRegistrosTitle.Location = new Point(24, 20);
             lblRegistrosTitle.Name = "lblRegistrosTitle";
-            lblRegistrosTitle.Size = new Size(317, 41);
+            lblRegistrosTitle.Size = new Size(302, 41);
             lblRegistrosTitle.TabIndex = 0;
             lblRegistrosTitle.Text = "Ejercicios Registrados";
             // 
@@ -456,7 +456,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1094, 1020);
+            AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 1030);
+            ClientSize = new Size(1256, 1020);
             Controls.Add(panelRegistros);
             Controls.Add(panelFormulario);
             Controls.Add(panelHeader);

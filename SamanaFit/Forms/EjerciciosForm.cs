@@ -20,6 +20,7 @@ namespace SamanaFit.Ui.Forms
         public EjerciciosForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             CargarEjerciciosDesdeBaseDatos();
             LimpiarFormulario();
@@ -188,6 +189,8 @@ namespace SamanaFit.Ui.Forms
 
             foreach (var ejercicio in ejercicios)
             {
+                if (ejercicio == null) continue;
+
                 dgvEjercicios.Rows.Add(
                     ejercicio.IdEjercicio,
                     ejercicio.Nombre ?? string.Empty,

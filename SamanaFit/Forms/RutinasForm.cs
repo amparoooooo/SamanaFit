@@ -23,6 +23,7 @@ namespace SamanaFit.Ui.Forms
         public RutinasForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             InicializarCamposPorDefecto();
             CargarCatalogos();
@@ -36,9 +37,7 @@ namespace SamanaFit.Ui.Forms
             btnEditar.Click += btnEditar_Click;
             btnEliminar.Click += btnEliminar_Click;
             btnGenerarRutina.Click += btnGenerarRutina_Click;
-            btnDetalleAgregar.Click += btnDetalleAgregar_Click;
-            btnDetalleEditar.Click += btnDetalleEditar_Click;
-            btnDetalleEliminar.Click += btnDetalleEliminar_Click;
+           
 
             dgvRutinas.SelectionChanged += dgvRutinas_SelectionChanged;
             dgvRutinas.CellClick += dgvRutinas_CellClick;
@@ -348,7 +347,8 @@ namespace SamanaFit.Ui.Forms
             foreach (var usuario in context.Usuarios.OrderBy(u => u.IdUsuario).ToList())
             {
                 _idsUsuarios.Add(usuario.IdUsuario);
-                cmbUsuario.Items.Add(string.IsNullOrWhiteSpace(usuario.Nombre) ? $"Usuario {usuario.IdUsuario}" : usuario.Nombre);
+                var nombre = string.IsNullOrWhiteSpace(usuario.Nombre) ? $"Usuario {usuario.IdUsuario}" : usuario.Nombre;
+                cmbUsuario.Items.Add(NormalizarNombreUsuario(nombre));
             }
 
             var objetivos = context.Objetivos
@@ -410,7 +410,7 @@ namespace SamanaFit.Ui.Forms
                 _idRutinaSeleccionada = null;
                 txtIdRutina.Text = GenerarSiguienteCodigoRutina();
                 txtFechaCreacion.Text = DateTime.Today.ToString("dd/MM/yyyy");
-                txtDuracionSemanas.Text = "8";
+                txtDuracionSemanas.Text = " ";
                 txtObservaciones.Clear();
                 cmbUsuario.SelectedIndex = 0;
                 cmbObjetivo.SelectedIndex = 0;
@@ -550,7 +550,13 @@ namespace SamanaFit.Ui.Forms
 
             using var context = new SamanaFitContext();
             var usuario = context.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuario.Value);
-            return usuario?.Nombre ?? string.Empty;
+            return NormalizarNombreUsuario(usuario?.Nombre ?? string.Empty);
+        }
+
+        private static string NormalizarNombreUsuario(string valor)
+        {
+            // Compatibilidad con datos antiguos guardados como "Nombre|Apellido"
+            return (valor ?? string.Empty).Replace('|', ' ').Trim();
         }
 
         private string ObtenerNombreObjetivoPorId(int? idObjetivo)

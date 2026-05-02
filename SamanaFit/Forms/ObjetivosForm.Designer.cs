@@ -230,7 +230,7 @@
             // 
             // panelRegistros
             // 
-            panelRegistros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panelRegistros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelRegistros.BackColor = Color.White;
             panelRegistros.Controls.Add(dgvObjetivos);
             panelRegistros.Controls.Add(lblRegistrosTitle);
@@ -324,6 +324,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            AutoScrollMinSize = new Size(0, 1080);
             ClientSize = new Size(1220, 1055);
             Controls.Add(panelRegistros);
             Controls.Add(panelForm);

@@ -8,6 +8,7 @@ namespace SamanaFit
         public MainForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             Shown += MainForm_Shown;
             Activated += MainForm_Activated;
         }

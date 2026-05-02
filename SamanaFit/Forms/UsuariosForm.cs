@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using SamanaFit.Data.Context;
+﻿using SamanaFit.Data.Context;
 using SamanaFit.Data.Models;
+using System.Data;
 
 namespace SamanaFit.Ui.Forms
 {
@@ -22,6 +15,7 @@ namespace SamanaFit.Ui.Forms
         public UsuariosForm()
         {
             InitializeComponent();
+            WindowState = FormWindowState.Maximized;
             ConfigurarFormulario();
             CargarUsuariosDesdeBaseDatos();
             LimpiarFormulario();
@@ -45,8 +39,7 @@ namespace SamanaFit.Ui.Forms
 
         private void UsuariosForm_Shown(object? sender, EventArgs e)
         {
-            // Al mostrarse el formulario, WinForms puede volver a seleccionar la primera fila.
-            // Forzamos el estado “nuevo registro” con los campos vacíos.
+            
             LimpiarFormulario();
         }
 
@@ -271,7 +264,10 @@ namespace SamanaFit.Ui.Forms
 
             foreach (var usuario in usuarios)
             {
-                SepararNombreCompleto(usuario.Nombre, out var nombre, out var apellido);
+                if (usuario == null) continue;
+
+                SepararNombreCompleto(usuario.Nombre ?? "", out var nombre, out var apellido);
+
                 dgvUsuarios.Rows.Add(
                     usuario.IdUsuario.ToString("D3"),
                     nombre,
@@ -388,7 +384,7 @@ namespace SamanaFit.Ui.Forms
         {
             var nombre = txtNombre.Text.Trim();
             var apellido = txtApellido.Text.Trim();
-            return $"{nombre}|{apellido}";
+            return string.Join(' ', new[] { nombre, apellido }.Where(s => !string.IsNullOrWhiteSpace(s)));
         }
 
         private static void SepararNombreCompleto(string? nombreCompleto, out string nombre, out string apellido)
